@@ -1,0 +1,868 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Metric + Maker — Partnership-driven residential development</title>
+<meta name="description" content="Metric + Maker is an SME residential and mixed-use developer. We deliver high-quality schemes through disciplined acquisition, planning-led value creation, and hands-on delivery.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy: #001F36;
+    --navy-2: #0A2A44;
+    --gold: #B3995D;
+    --gold-soft: #C9B37A;
+    --cream: #DDD6C0;
+    --paper: #F1EDE1;
+    --ink: #1A2535;
+    --ink-mute: rgba(0, 31, 54, 0.66);
+    --ink-faint: rgba(0, 31, 54, 0.14);
+    --line-cream: rgba(0, 31, 54, 0.18);
+    --line-navy: rgba(255, 255, 255, 0.14);
+    --serif: "Fraunces", "Cormorant Garamond", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --max: 1240px;
+    --gap: clamp(16px, 2vw, 28px);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+  body {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--paper);
+  }
+  img, svg { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; cursor: pointer; border: 0; background: transparent; color: inherit; }
+
+  .wrap {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 clamp(20px, 4vw, 40px);
+  }
+
+  /* --- Type --- */
+  h1, h2, h3, h4 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 50;
+    letter-spacing: -0.01em;
+    line-height: 1.08;
+    margin: 0;
+    color: var(--navy);
+  }
+  .eyebrow {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .eyebrow-light { color: var(--gold-soft); }
+  .lead { font-size: clamp(18px, 1.4vw, 20px); line-height: 1.55; color: var(--ink-mute); max-width: 58ch; }
+
+  /* --- Buttons --- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    border: 1px solid transparent;
+    transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+  }
+  .btn-primary { background: var(--navy); color: var(--paper); }
+  .btn-primary:hover { background: var(--gold); color: var(--navy); }
+  .btn-ghost-navy { border-color: var(--navy); color: var(--navy); }
+  .btn-ghost-navy:hover { background: var(--navy); color: var(--paper); }
+  .btn-ghost-cream { border-color: var(--gold-soft); color: var(--paper); }
+  .btn-ghost-cream:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+  .btn-arrow { transition: transform .2s ease; }
+  .btn:hover .btn-arrow { transform: translateX(4px); }
+
+  /* --- Header / Nav --- */
+  header.site {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(241, 237, 225, 0.85);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--ink-faint);
+  }
+  header.site .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 104px;
+  }
+  .brand { display: inline-flex; align-items: center; gap: 10px; }
+  .brand img { height: 64px; width: auto; }
+  nav.primary { display: flex; align-items: center; gap: 28px; }
+  nav.primary a {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    opacity: 0.8;
+    padding: 6px 0;
+    border-bottom: 1px solid transparent;
+  }
+  nav.primary a:hover { opacity: 1; border-bottom-color: var(--gold); }
+  /* Nav CTA: restrained text link with a gold arrow — no filled block */
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--navy);
+    opacity: 1;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--gold);
+  }
+  .nav-cta .arr {
+    display: inline-block;
+    color: var(--gold);
+    transition: transform .2s ease;
+  }
+  .nav-cta:hover { border-bottom-color: var(--navy); }
+  .nav-cta:hover .arr { transform: translateX(4px); }
+  .menu-toggle { display: none; }
+
+  /* --- Hero (full-screen drone footage) --- */
+  section.hero {
+    background: var(--navy);
+    min-height: 100vh;
+    padding: clamp(120px, 14vw, 180px) 0 clamp(90px, 10vw, 140px);
+    position: relative;
+    overflow: hidden;
+    color: var(--paper);
+    display: flex;
+    align-items: center;
+  }
+  .hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(180deg, rgba(0,31,54,0.55) 0%, rgba(0,31,54,0.25) 40%, rgba(0,31,54,0.85) 100%),
+      linear-gradient(90deg, rgba(0,31,54,0.55) 0%, rgba(0,31,54,0.05) 60%);
+    pointer-events: none;
+  }
+  .hero-inner { display: grid; grid-template-columns: 1fr; gap: 48px; position: relative; z-index: 2; width: 100%; }
+  .hero h1 {
+    font-size: clamp(44px, 6.2vw, 88px);
+    max-width: 16ch;
+    font-weight: 400;
+    color: var(--paper);
+    text-shadow: 0 2px 24px rgba(0,0,0,0.25);
+  }
+  .hero h1 em { font-style: italic; color: var(--gold-soft); font-weight: 400; }
+  .hero .eyebrow { color: var(--gold-soft); }
+  .hero p.lead {
+    margin-top: 28px;
+    font-size: clamp(18px, 1.5vw, 22px);
+    max-width: 62ch;
+    color: rgba(255, 255, 255, 0.88);
+    text-shadow: 0 1px 16px rgba(0,0,0,0.2);
+  }
+  .hero .actions { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 14px; }
+  .hero .actions .btn-primary { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+  .hero .actions .btn-primary:hover { background: var(--paper); color: var(--navy); border-color: var(--paper); }
+  .hero .actions .btn-ghost-navy { border-color: rgba(255,255,255,0.5); color: var(--paper); }
+  .hero .actions .btn-ghost-navy:hover { background: var(--paper); color: var(--navy); border-color: var(--paper); }
+  .hero .meta {
+    margin-top: 64px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .hero .meta .dash { width: 32px; height: 1px; background: rgba(255, 255, 255, 0.25); }
+  .hero-scroll {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    pointer-events: none;
+  }
+  .hero-scroll .line {
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.4), rgba(255,255,255,0));
+    animation: scroll-pulse 2.4s ease-in-out infinite;
+    transform-origin: top;
+  }
+  @keyframes scroll-pulse {
+    0%, 100% { transform: scaleY(0.4); opacity: 0.4; }
+    50% { transform: scaleY(1); opacity: 1; }
+  }
+  @media (max-width: 540px) { .hero-scroll { display: none; } }
+
+  /* Reduced-motion: swap video for the sketch poster */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-video { display: none; }
+    .hero-scroll .line { animation: none; }
+    section.hero { background: url('assets/Hitchin sketch 1.jpg') center/cover no-repeat, var(--navy); }
+  }
+
+  /* --- Stats band --- */
+  section.stats {
+    background: var(--navy);
+    color: var(--paper);
+    padding: clamp(70px, 9vw, 120px) 0;
+    border-top: 1px solid var(--navy-2);
+    border-bottom: 1px solid var(--navy-2);
+  }
+  .stats-head { max-width: 70ch; margin-bottom: 56px; }
+  .stats-head .eyebrow { color: var(--gold-soft); margin-bottom: 16px; display: block; }
+  .stats-head h2 { color: var(--paper); font-size: clamp(28px, 3vw, 42px); max-width: 26ch; }
+  .stats-head p { color: rgba(255,255,255,0.66); margin-top: 18px; max-width: 60ch; }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    border-top: 1px solid var(--line-navy);
+    padding-top: 48px;
+  }
+  .stat .num {
+    font-family: var(--serif);
+    font-size: clamp(44px, 5vw, 68px);
+    color: var(--gold);
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+  .stat .lbl { margin-top: 14px; font-size: 14px; color: rgba(255,255,255,0.72); line-height: 1.5; max-width: 22ch; }
+
+  /* --- Section helpers --- */
+  section.band { padding: clamp(80px, 10vw, 140px) 0; }
+  section.cream { background: var(--paper); }
+  section.stone { background: var(--cream); }
+  section.navy { background: var(--navy); color: var(--paper); }
+  section.navy h2, section.navy h3 { color: var(--paper); }
+
+  .section-head {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: clamp(24px, 4vw, 80px);
+    align-items: end;
+    margin-bottom: clamp(48px, 6vw, 80px);
+  }
+  .section-head .num {
+    font-family: var(--serif);
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .section-head h2 {
+    font-size: clamp(32px, 4vw, 56px);
+    max-width: 20ch;
+  }
+  .section-head p { color: var(--ink-mute); max-width: 56ch; }
+  section.navy .section-head p { color: rgba(255,255,255,0.72); }
+
+  /* --- Services --- */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--line-cream);
+    border: 1px solid var(--line-cream);
+  }
+  .service {
+    background: var(--paper);
+    padding: clamp(30px, 3.5vw, 48px);
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: background .25s ease;
+  }
+  .service:hover { background: #fff; }
+  .service .idx {
+    font-family: var(--serif);
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    color: var(--gold);
+    font-weight: 500;
+  }
+  .service h3 { font-size: clamp(22px, 2vw, 30px); max-width: 16ch; }
+  .service p { color: var(--ink-mute); font-size: 15.5px; margin: 0; }
+  .service .more {
+    margin-top: auto;
+    padding-top: 24px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy);
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .service .more svg { transition: transform .2s ease; }
+  .service:hover .more svg { transform: translateX(4px); }
+
+  /* --- Featured project --- */
+  section.feature { background: var(--navy); color: var(--paper); padding: 0; overflow: hidden; }
+  .feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 620px;
+  }
+  .feature-img {
+    background-color: #0A2A44;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  .feature-img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0,31,54,0) 60%, rgba(0,31,54,0.5) 100%);
+  }
+  .feature-copy {
+    padding: clamp(56px, 6vw, 96px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+  }
+  .feature-copy .eyebrow { color: var(--gold-soft); }
+  .feature-copy h2 { color: var(--paper); font-size: clamp(32px, 3.6vw, 52px); max-width: 14ch; }
+  .feature-copy .subtitle {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--gold-soft);
+    font-size: 18px;
+    margin-top: -8px;
+  }
+  .feature-copy p { color: rgba(255,255,255,0.78); max-width: 50ch; }
+  .feature-facts {
+    margin-top: 8px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line-navy);
+  }
+  .feature-facts div { font-size: 14px; }
+  .feature-facts .k { color: var(--gold-soft); letter-spacing: 0.08em; text-transform: uppercase; font-size: 11px; margin-bottom: 4px; }
+  .feature-facts .v { color: var(--paper); }
+  .feature-copy .actions { margin-top: 16px; }
+
+  /* --- People --- */
+  .people-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(20px, 2.5vw, 40px);
+  }
+  .person { display: flex; flex-direction: column; gap: 14px; }
+  .person .portrait {
+    aspect-ratio: 4/5;
+    background: linear-gradient(160deg, #2A3B52 0%, var(--navy) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .person .portrait::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('assets/mark-gold.svg');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.18;
+  }
+  .person .portrait .tag {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 4px 8px;
+  }
+  .person h3 { font-size: 22px; }
+  .person .role { font-size: 13px; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; }
+  .person .bio { font-size: 14.5px; color: var(--ink-mute); }
+  .person a.email { font-size: 13px; color: var(--navy); border-bottom: 1px solid var(--ink-faint); padding-bottom: 2px; align-self: flex-start; }
+  .person a.email:hover { border-bottom-color: var(--gold); }
+
+  /* --- Partners: horizontal scrolling reel --- */
+  .reel {
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid var(--line-cream);
+    border-bottom: 1px solid var(--line-cream);
+    padding: 8px 0;
+    background: var(--paper);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+            mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+  }
+  .reel-track {
+    display: flex;
+    align-items: center;
+    gap: clamp(48px, 7vw, 96px);
+    width: max-content;
+    animation: reel-scroll 42s linear infinite;
+  }
+  .reel:hover .reel-track { animation-play-state: paused; }
+  @media (prefers-reduced-motion: reduce) {
+    .reel-track { animation: none; flex-wrap: wrap; width: 100%; justify-content: space-around; }
+  }
+  @keyframes reel-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .reel-item {
+    flex: 0 0 auto;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+  }
+  .reel-item img {
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.8;
+    transition: opacity .3s ease;
+  }
+  .reel-item:hover img { opacity: 1; }
+  .reel-item.text {
+    font-family: var(--serif);
+    font-size: 22px;
+    letter-spacing: 0.06em;
+    color: var(--navy);
+    opacity: 0.55;
+    white-space: nowrap;
+  }
+  .reel-item.text:hover { opacity: 0.85; }
+
+  /* --- Contact CTA --- */
+  section.cta {
+    background: var(--navy);
+    color: var(--paper);
+    padding: clamp(90px, 11vw, 160px) 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-inner { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: end; position: relative; z-index: 1; }
+  .cta h2 { font-size: clamp(36px, 5vw, 72px); color: var(--paper); max-width: 18ch; }
+  .cta h2 em { color: var(--gold); font-style: italic; }
+  .cta .right p { color: rgba(255,255,255,0.72); max-width: 42ch; }
+  .cta .emails {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 15px;
+  }
+  .cta .emails a { color: var(--gold-soft); border-bottom: 1px solid transparent; padding-bottom: 2px; }
+  .cta .emails a:hover { border-bottom-color: var(--gold); color: var(--gold); }
+  .cta .actions { margin-top: 40px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .cta::before {
+    content: "";
+    position: absolute;
+    left: -10%;
+    bottom: -40%;
+    width: 70%;
+    height: 140%;
+    background: radial-gradient(ellipse at center, rgba(179, 153, 93, 0.10) 0%, rgba(179, 153, 93, 0) 60%);
+    pointer-events: none;
+  }
+
+  /* --- Footer --- */
+  footer.site {
+    background: var(--navy);
+    color: rgba(255,255,255,0.5);
+    padding: 40px 0;
+    border-top: 1px solid var(--navy-2);
+    font-size: 13px;
+  }
+  footer.site .bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  footer.site a { color: rgba(255,255,255,0.66); }
+  footer.site a:hover { color: var(--gold); }
+  footer.site .foot-nav { display: flex; gap: 24px; flex-wrap: wrap; }
+
+  /* --- Tick mark decorative --- */
+  .tickmark {
+    display: inline-flex;
+    gap: 4px;
+    align-items: center;
+    height: 14px;
+  }
+  .tickmark span {
+    display: block;
+    width: 2px;
+    height: 100%;
+    background: var(--gold);
+  }
+  .tickmark .plus {
+    width: 10px; height: 2px; background: var(--gold); position: relative;
+  }
+  .tickmark .plus::before {
+    content: ""; position: absolute; left: 4px; top: -4px; width: 2px; height: 10px; background: var(--gold);
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 960px) {
+    nav.primary { display: none; }
+    .menu-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px; height: 40px;
+      border: 1px solid var(--line-cream);
+      color: var(--navy);
+    }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 36px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .feature-grid { grid-template-columns: 1fr; }
+    .feature-img { min-height: 320px; }
+    .feature-img::after { background: linear-gradient(180deg, rgba(0,31,54,0) 60%, rgba(0,31,54,0.5) 100%); }
+    .people-grid { grid-template-columns: repeat(2, 1fr); }
+    .partners-row { grid-template-columns: repeat(2, 1fr); }
+    .partners-row .p:nth-child(2n) { border-right: 0; }
+    .partners-row .p:nth-child(-n+2) { border-bottom: 1px solid var(--line-cream); }
+    .cta-inner { grid-template-columns: 1fr; gap: 40px; }
+    .section-head { grid-template-columns: 1fr; gap: 16px; }
+  }
+  @media (max-width: 540px) {
+    .stats-grid { grid-template-columns: 1fr; }
+    .people-grid { grid-template-columns: 1fr; }
+    .hero .meta { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="site">
+  <div class="wrap bar">
+    <a href="#" class="brand" aria-label="Metric + Maker — home">
+      <img src="assets/logo-navy.svg" alt="Metric + Maker">
+    </a>
+    <nav class="primary" aria-label="Primary">
+      <a href="#what">What we do</a>
+      <a href="#approach">Approach</a>
+      <a href="#people">People</a>
+      <a href="#partners">Partners</a>
+      <a href="#contact" class="nav-cta">Partner with us <span class="arr">→</span></a>
+    </nav>
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
+  </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <video
+    class="hero-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+    poster="assets/Hitchin sketch 1.jpg"
+    aria-hidden="true">
+    <source src="assets/Hitchin.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow">SME residential &amp; mixed-use developer</span>
+      <h1 style="margin-top:28px;">
+        Ambitious, <em>partnership-driven</em> residential development.
+      </h1>
+      <p class="lead">
+        We deliver high-quality residential and mixed-use schemes through disciplined acquisition,
+        planning-led value creation, and hands-on delivery &mdash; in joint venture with landowners,
+        investors, and local authorities.
+      </p>
+      <div class="actions">
+        <a href="#contact" class="btn btn-primary">Start a conversation <span class="btn-arrow">→</span></a>
+        <a href="#what" class="btn btn-ghost-navy">What we do</a>
+      </div>
+      <div class="meta">
+        <span class="tickmark" aria-hidden="true">
+          <span></span><span></span><span class="plus"></span><span></span><span></span>
+        </span>
+        <span>Est. Herts &middot; London &middot; Active UK-wide</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <span class="line"></span>
+  </div>
+</section>
+
+<!-- ========== STATS ========== -->
+<section class="stats" id="track-record">
+  <div class="wrap">
+    <div class="stats-head">
+      <span class="eyebrow eyebrow-light">01 &mdash; Track record</span>
+      <h2 style="margin-top:16px;">Sixty years of combined experience, channelled into every deal we do.</h2>
+      <p>
+        Prior to founding Metric + Maker, our directors collectively delivered thousands of homes,
+        managed over a billion pounds of senior debt, and raised nine-figure equity for leading
+        residential developers in London.
+      </p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat"><div class="num">5,000<span style="color:var(--gold-soft)">+</span></div><div class="lbl">Homes delivered across private-for-sale and affordable tenure</div></div>
+      <div class="stat"><div class="num">£1bn<span style="color:var(--gold-soft)">+</span></div><div class="lbl">Development debt originated and managed</div></div>
+      <div class="stat"><div class="num">£200m<span style="color:var(--gold-soft)">+</span></div><div class="lbl">Equity raised for SME residential schemes</div></div>
+      <div class="stat"><div class="num">60<span style="color:var(--gold-soft)"> yrs</span></div><div class="lbl">Combined director experience across the property lifecycle</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section class="band cream" id="what">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="num">02 &mdash; What we do</span>
+      </div>
+      <div>
+        <h2 style="margin-top:12px;">Active across the full development lifecycle.</h2>
+        <p style="margin-top:18px;">
+          From site acquisition through to delivery &mdash; working independently and in joint venture with
+          established and new partners. A disciplined, design-led approach, grounded in commercial reality.
+        </p>
+      </div>
+    </div>
+
+    <div class="services-grid">
+      <article class="service">
+        <span class="idx">&mdash; 01</span>
+        <h3>Development <em style="color:var(--gold);font-style:normal;">+</em> Contracting</h3>
+        <p>Origination, planning, and delivery of residential and mixed-use schemes, with a focus on well-located sites where active management can create value.</p>
+        <a href="#" class="more">Read more <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 5h12M9 1l4 4-4 4"/></svg></a>
+      </article>
+      <article class="service">
+        <span class="idx">&mdash; 02</span>
+        <h3>Joint Ventures <em style="color:var(--gold);font-style:normal;">+</em> Partnerships</h3>
+        <p>Structuring and delivering projects in partnership with landowners, investors, and local authorities through flexible JV and development management arrangements.</p>
+        <a href="#" class="more">Read more <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 5h12M9 1l4 4-4 4"/></svg></a>
+      </article>
+      <article class="service">
+        <span class="idx">&mdash; 03</span>
+        <h3>Land <em style="color:var(--gold);font-style:normal;">+</em> Site Acquisition</h3>
+        <p>Targeting sites with planning potential, repositioning opportunities, or development upside &mdash; including off-market and partnership-led transactions.</p>
+        <a href="#" class="more">Read more <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 5h12M9 1l4 4-4 4"/></svg></a>
+      </article>
+      <article class="service">
+        <span class="idx">&mdash; 04</span>
+        <h3>Investment <em style="color:var(--gold);font-style:normal;">+</em> Asset Delivery</h3>
+        <p>Managing projects through the full lifecycle &mdash; from acquisition and planning to construction, completion, and exit or long-term hold.</p>
+        <a href="#" class="more">Read more <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 5h12M9 1l4 4-4 4"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FEATURED PROJECT ========== -->
+<section class="feature" id="approach">
+  <div class="feature-grid">
+    <div class="feature-img" style="background-image:url('assets/Hitchin sketch 1.jpg');" role="img" aria-label="Architectural sketch of Radcliffe House and gardens, Priory Park Gardens, Hitchin"></div>
+    <div class="feature-copy">
+      <span class="eyebrow eyebrow-light">03 &mdash; Our approach, in practice</span>
+      <h2>Priory Park Gardens, Hitchin.</h2>
+      <div class="subtitle">A once-in-a-generation residential development in the historic grounds of Hitchin Priory.</div>
+      <p>
+        Former office buildings set in 30 acres of landscaped parkland &mdash; two minutes from Hitchin
+        town centre, thirty minutes from London. A design-led scheme focused on quality, long-term
+        placemaking, and site-sensitive development, delivered in joint venture with Myco.
+      </p>
+      <div class="feature-facts">
+        <div><div class="k">Location</div><div class="v">Hitchin, Herts</div></div>
+        <div><div class="k">Setting</div><div class="v">30 acres of parkland</div></div>
+        <div><div class="k">Tenure</div><div class="v">1&ndash;4 bed apartments &amp; houses</div></div>
+        <div><div class="k">Partner</div><div class="v">JV with Myco</div></div>
+      </div>
+      <div class="actions">
+        <a href="#" class="btn btn-ghost-cream">View the case study <span class="btn-arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PEOPLE ========== -->
+<section class="band cream" id="people">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="num">04 &mdash; Our people</span></div>
+      <div>
+        <h2 style="margin-top:12px;">Four founders. One tight-knit, commercially minded team.</h2>
+        <p style="margin-top:18px;">
+          Experts and innovators with a background in delivering for leading developers, private
+          investors, and JV partnerships &mdash; and a passion for creating places where people and
+          communities can thrive.
+        </p>
+      </div>
+    </div>
+
+    <div class="people-grid">
+      <article class="person">
+        <div class="portrait"><span class="tag">Photo to follow</span></div>
+        <div class="role">Partnerships + Land Acquisition</div>
+        <h3>Bradley Goding</h3>
+        <p class="bio">18+ years in real estate. Secured sites for 1,700+ homes with a combined GDV over £1.1bn. Entrepreneurial leader and people-first operator.</p>
+        <a class="email" href="mailto:brad@metricandmaker.com">brad@metricandmaker.com</a>
+      </article>
+      <article class="person">
+        <div class="portrait"><span class="tag">Photo to follow</span></div>
+        <div class="role">Investments + New Business</div>
+        <h3>Matthew Tucker</h3>
+        <p class="bio">Previously led teams at JLL and WSP. 15+ years supporting £700m+ of development finance. Detail is his default &mdash; every deal stacks.</p>
+        <a class="email" href="mailto:matt@metricandmaker.com">matt@metricandmaker.com</a>
+      </article>
+      <article class="person">
+        <div class="portrait"><span class="tag">Photo to follow</span></div>
+        <div class="role">Commercial Operations</div>
+        <h3>James Hutchins</h3>
+        <p class="bio">15+ years in mixed-use residential development. Delivered 1,700+ homes at a combined build cost of £555m+. Cost control, quality, programme.</p>
+        <a class="email" href="mailto:james@metricandmaker.com">james@metricandmaker.com</a>
+      </article>
+      <article class="person">
+        <div class="portrait"><span class="tag">Photo to follow</span></div>
+        <div class="role">Design + Planning</div>
+        <h3>Sam Roberts</h3>
+        <p class="bio">15+ years in mixed-use residential. Delivered 1,750+ homes at £650m+ build cost. Turns big ideas into things that actually get built.</p>
+        <a class="email" href="mailto:sam@metricandmaker.com">sam@metricandmaker.com</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PARTNERS ========== -->
+<section class="band stone" id="partners" style="padding-top:clamp(60px,7vw,100px);padding-bottom:clamp(60px,7vw,100px);">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:36px;">
+      <div><span class="num">05 &mdash; Network &amp; partners</span></div>
+      <div>
+        <h2 style="margin-top:12px;font-size:clamp(26px,3vw,40px);">A trusted network of architects, planners, designers, and contractors.</h2>
+        <p style="margin-top:14px;">
+          A deep bench of industry-leading organisations we've delivered with time and again over the
+          last two decades &mdash; letting us work with speed, trust and transparency while staying close
+          to every detail.
+        </p>
+      </div>
+    </div>
+    <div class="reel" aria-label="Partner organisations">
+      <div class="reel-track">
+        <!-- First pass -->
+        <div class="reel-item"><img src="myco_logo.webp" alt="Myco"></div>
+        <div class="reel-item"><img src="HTA.webp" alt="HTA"></div>
+        <div class="reel-item"><img src="youth.webp" alt="Youth"></div>
+        <div class="reel-item text">C O P P E R C O A S T</div>
+        <div class="reel-item"><img src="myco_logo.webp" alt=""></div>
+        <div class="reel-item"><img src="HTA.webp" alt=""></div>
+        <div class="reel-item"><img src="youth.webp" alt=""></div>
+        <div class="reel-item text">C O P P E R C O A S T</div>
+        <!-- Second pass (duplicate for seamless loop) -->
+        <div class="reel-item" aria-hidden="true"><img src="myco_logo.webp" alt=""></div>
+        <div class="reel-item" aria-hidden="true"><img src="HTA.webp" alt=""></div>
+        <div class="reel-item" aria-hidden="true"><img src="youth.webp" alt=""></div>
+        <div class="reel-item text" aria-hidden="true">C O P P E R C O A S T</div>
+        <div class="reel-item" aria-hidden="true"><img src="myco_logo.webp" alt=""></div>
+        <div class="reel-item" aria-hidden="true"><img src="HTA.webp" alt=""></div>
+        <div class="reel-item" aria-hidden="true"><img src="youth.webp" alt=""></div>
+        <div class="reel-item text" aria-hidden="true">C O P P E R C O A S T</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT CTA ========== -->
+<section class="cta" id="contact">
+  <div class="wrap cta-inner">
+    <div class="left">
+      <span class="eyebrow eyebrow-light">06 &mdash; Let's work together</span>
+      <h2 style="margin-top:20px;">Got a site, a scheme, or a <em>conversation worth&nbsp;having?</em></h2>
+    </div>
+    <div class="right">
+      <p>
+        We welcome conversations with landowners, investors, and partners at all stages. Current focus:
+        residential and mixed-use sites, land with planning potential, and joint-venture opportunities
+        where design and setting are central to value.
+      </p>
+      <div class="emails">
+        <a href="mailto:brad@metricandmaker.com">brad@metricandmaker.com &mdash; Partnerships &amp; Land</a>
+        <a href="mailto:matt@metricandmaker.com">matt@metricandmaker.com &mdash; Investments &amp; New Business</a>
+      </div>
+      <div class="actions">
+        <a href="mailto:hello@metricandmaker.com" class="btn btn-primary" style="background:var(--gold);color:var(--navy);">Get in touch <span class="btn-arrow">→</span></a>
+        <a href="#" class="btn btn-ghost-cream">Download B2B deck</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="site">
+  <div class="wrap bar">
+    <div>© Metric + Maker Ltd. All rights reserved.</div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="#what">What we do</a>
+      <a href="#approach">Approach</a>
+      <a href="#people">People</a>
+      <a href="#contact">Contact</a>
+      <a href="#">Privacy</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

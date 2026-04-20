@@ -1,0 +1,96 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import StatsBand from '../components/StatsBand.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+
+const directors = [
+  {
+    name: 'Bradley Goding',
+    role: 'Partnerships + Land Acquisition',
+    quote: 'Brad left a corporate role to launch Metric + Maker — backing belief over certainty.',
+    bio: [
+      "A real estate professional with 18+ years of experience specialising in land acquisitions, securing sites for 1,700+ homes with a combined GDV of £1.1bn+.",
+      'As an entrepreneurial leader and people-first operator, he brings energy, optimism, and big-picture thinking to every partnership.',
+      'Brad holds a BSc (Hons) in Construction Management. Married with two children.',
+    ],
+    email: 'brad@metricandmaker.com',
+  },
+  {
+    name: 'Matthew Tucker',
+    role: 'Investments + New Business',
+    quote: 'Detail is his default. He de-risks, and he makes sure every deal stacks.',
+    bio: [
+      'An investment specialist well-versed in advising institutional investors on the technical risks associated with developments.',
+      'Matt previously led teams at market leader JLL and global consultancy WSP. With 15+ years of industry experience, he has supported £700m+ of development finance in the SME residential market.',
+      'Matt holds an MSc in Surveying and is a member of the Chartered Institute of Building (MCIOB).',
+    ],
+    email: 'matt@metricandmaker.com',
+  },
+  {
+    name: 'James Hutchins',
+    role: 'Commercial Operations',
+    quote: 'Cost control, quality, programme — and innovative solutions to complex challenges.',
+    bio: [
+      "With 15+ years of experience in mixed-use residential development, James has delivered more than 1,700 homes with a total build cost of £555m+.",
+      "He's a results-driven professional with expertise in cost control, quality, and programme management, known for finding innovative solutions to complex challenges.",
+      "James holds a BSc (Hons) in Commercial Management. Happily married, with a bossy little dachshund named Spencer.",
+    ],
+    email: 'james@metricandmaker.com',
+  },
+  {
+    name: 'Sam Roberts',
+    role: 'Design + Planning',
+    quote: "Sam's superpower is turning big ideas into things that actually get built.",
+    bio: [
+      "15+ years of experience in mixed-use residential development. Sam has delivered 1,750+ homes at a total build cost of £650m+.",
+      "Creative but grounded — he knows how to push boundaries without blowing the budget.",
+      "Sam holds a BA (Hons) in Architecture. At home, he's outnumbered: his wife and two young daughters keep him on his toes.",
+    ],
+    email: 'sam@metricandmaker.com',
+  },
+];
+---
+
+<Base
+  title="People — Metric + Maker"
+  description="Meet the four founding directors of Metric + Maker — a tight-knit, commercially minded team of experts and innovators with a combined 60+ years in residential development."
+  currentPath="/people"
+>
+  <PageHeader
+    eyebrow="Our people"
+    title="Four founders. <em>One tight-knit team.</em>"
+    lead="Our directors are experts and innovators with a background in delivering for leading developers, private investors, and JV partnerships — and a passion for creating places where people and communities can thrive."
+  />
+
+  <section class="band cream">
+    <div class="wrap">
+      <div class="people-detail">
+        {
+          directors.map((d) => (
+            <article class="person-detail">
+              <div class="portrait">
+                <span class="tag">Photo to follow</span>
+              </div>
+              <div>
+                <span class="role">{d.role}</span>
+                <h3>{d.name}</h3>
+                <p class="quote">"{d.quote}"</p>
+                {d.bio.map((p) => <p>{p}</p>)}
+                <a class="email" href={`mailto:${d.email}`}>{d.email}</a>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <StatsBand
+    eyebrow="Combined track record"
+    heading="Prior to Metric + Maker — the numbers that sit behind the team."
+    intro="Before founding the business, our directors collectively delivered thousands of homes, managed over a billion pounds of senior debt, and raised nine-figure equity for some of the most respected residential developers in London."
+  />
+
+  <ContactCTA heading="Prefer to go <em>direct to a director?</em>" />
+</Base>

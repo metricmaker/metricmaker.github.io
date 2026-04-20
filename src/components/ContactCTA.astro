@@ -1,0 +1,34 @@
+---
+interface Props {
+  heading?: string;
+}
+const {
+  heading = "Got a site, a scheme, or a <em>conversation worth&nbsp;having?</em>",
+} = Astro.props;
+---
+
+<section class="cta" id="contact">
+  <div class="wrap cta-inner">
+    <div class="left">
+      <span class="eyebrow eyebrow-light">Let's work together</span>
+      <h2 style="margin-top:20px;" set:html={heading} />
+    </div>
+    <div class="right">
+      <p>
+        We welcome conversations with landowners, investors, and partners at all stages. Current focus:
+        residential and mixed-use sites, land with planning potential, and joint-venture opportunities
+        where design and setting are central to value.
+      </p>
+      <div class="emails">
+        <a href="mailto:brad@metricandmaker.com">brad@metricandmaker.com — Partnerships &amp; Land</a>
+        <a href="mailto:matt@metricandmaker.com">matt@metricandmaker.com — Investments &amp; New Business</a>
+      </div>
+      <div class="actions">
+        <a href="mailto:hello@metricandmaker.com" class="btn btn-primary" style="background:var(--gold);color:var(--navy);">
+          Get in touch <span class="btn-arrow">→</span>
+        </a>
+        <a href="/contact" class="btn btn-ghost-cream">More ways to reach us</a>
+      </div>
+    </div>
+  </div>
+</section>

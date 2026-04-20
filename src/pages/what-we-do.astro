@@ -1,0 +1,140 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+---
+
+<Base
+  title="What we do — Metric + Maker"
+  description="Metric + Maker is active across the full development lifecycle: development & contracting, joint ventures, land & site acquisition, investment & asset delivery."
+  currentPath="/what-we-do"
+>
+  <PageHeader
+    eyebrow="What we do"
+    title="Active across the full development <em>lifecycle.</em>"
+    lead="From site acquisition through to delivery — working independently and in joint venture with established and new partners. A disciplined, design-led approach, grounded in commercial reality."
+  />
+
+  <!-- Development + Contracting -->
+  <section class="band cream" id="development">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="num">— 01</span></div>
+        <div>
+          <h2>Development <em style="color:var(--gold);font-style:normal;">+</em> Contracting</h2>
+          <p style="margin-top:18px;">
+            Origination, planning, and delivery of residential and mixed-use schemes, with a focus on
+            well-located sites where active management can create value.
+          </p>
+          <p style="margin-top:10px;">
+            We take a hands-on approach across the full development lifecycle — from feasibility and
+            planning through design development, procurement, construction oversight, and completion.
+            Our combined track record covers over 5,000 homes delivered for leading residential
+            developers in London and the Home Counties.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Joint Ventures + Partnerships -->
+  <section class="band stone" id="joint-ventures">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="num">— 02</span></div>
+        <div>
+          <h2>Joint Ventures <em style="color:var(--gold);font-style:normal;">+</em> Partnerships</h2>
+          <p style="margin-top:18px;">
+            We partner with landowners, investors and developers to originate, structure, and deliver
+            residential and mixed-use schemes.
+          </p>
+          <p style="margin-top:10px;">
+            We take a flexible approach to partnerships and are experienced in working across a range
+            of structures, including:
+          </p>
+          <ul style="margin-top:10px;padding-left:22px;color:var(--ink-mute);line-height:1.8;">
+            <li>Joint ventures</li>
+            <li>Development management agreements</li>
+            <li>Equity partnerships</li>
+            <li>Option and promotion arrangements</li>
+          </ul>
+          <p style="margin-top:16px;">
+            Our involvement typically spans the full development lifecycle, allowing us to maintain
+            control of quality, programme, and commercial performance. We favour projects where close
+            collaboration, clear alignment, and a disciplined approach can unlock the full potential of
+            a site.
+          </p>
+        </div>
+      </div>
+
+      <!-- Sub-specialisms -->
+      <div class="services-grid" style="margin-top:clamp(40px,5vw,72px);">
+        <article class="service">
+          <span class="idx">Office to residential</span>
+          <h3>Unlocking obsolete commercial stock</h3>
+          <p>We partner with family offices and long-term landowners to unlock underused offices and oversized high-street assets — leveraging permitted development rights and reuse to reduce risk and deliver high-quality residential or mixed-use schemes.</p>
+        </article>
+        <article class="service">
+          <span class="idx">JV mixed-use development</span>
+          <h3>Policy-led sites, unlocked together</h3>
+          <p>We've delivered 12 JV schemes with Registered Providers and Local Authorities, helping unlock complex, policy-led sites they can't progress alone — and offering flexible returns (land, housing, or both) while keeping projects viable, fundable, and policy-aligned.</p>
+        </article>
+        <article class="service">
+          <span class="idx">Downsizer-friendly living</span>
+          <h3>Aspirational rightsizing for the over-55s</h3>
+          <p>Many over-55s want to downsize but reject traditional retirement living, leaving them in oversized homes. We target this underserved, equity-rich segment with high-quality 'lock and leave' homes — aspirational rightsizing for independent, lifestyle-driven buyers.</p>
+        </article>
+        <article class="service">
+          <span class="idx">Bespoke structures</span>
+          <h3>Flexible to the opportunity</h3>
+          <p>Every deal is different. We structure around the landowner's or investor's goals — whether that's maximising land value, retaining an ongoing stake, or minimising risk through phased delivery and clear governance.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Land + Site Acquisition -->
+  <section class="band cream" id="land">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="num">— 03</span></div>
+        <div>
+          <h2>Land <em style="color:var(--gold);font-style:normal;">+</em> Site Acquisition</h2>
+          <p style="margin-top:18px;">
+            Targeting sites with planning potential, repositioning opportunities or development upside
+            — including off-market and partnership-led transactions.
+          </p>
+          <p style="margin-top:10px;">
+            Our acquisitions team has secured sites for 1,700+ homes with a combined GDV over £1.1bn.
+            We move quickly and with conviction, backed by a clear commercial lens: does this deal
+            stack, and what's the realistic path to value?
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Investment + Asset Delivery -->
+  <section class="band stone" id="investment">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="num">— 04</span></div>
+        <div>
+          <h2>Investment <em style="color:var(--gold);font-style:normal;">+</em> Asset Delivery</h2>
+          <p style="margin-top:18px;">
+            Managing projects through the full lifecycle — from acquisition and planning to
+            construction, completion, and exit or long-term hold.
+          </p>
+          <p style="margin-top:10px;">
+            We've collectively managed over £1bn of senior debt and raised £200m+ of equity for SME
+            residential developers. Our directors advise institutional investors on the technical risks
+            associated with developments, de-risking deals and ensuring every project stacks
+            commercially.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ContactCTA heading="Want to talk about a <em>specific scheme or site?</em>" />
+</Base>

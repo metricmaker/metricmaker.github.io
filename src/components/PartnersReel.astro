@@ -1,0 +1,46 @@
+---
+/*
+ * Horizontal scrolling partners reel. Duplicated set for seamless loop —
+ * the animation translates -50%, so the second half re-enters from the right
+ * just as the first half exits left.
+ */
+
+const partners = [
+  { img: '/assets/myco_logo.webp', alt: 'Myco' },
+  { img: '/assets/HTA.webp', alt: 'HTA' },
+  { img: '/assets/youth.webp', alt: 'Youth' },
+  { text: 'C O P P E R C O A S T' },
+];
+
+// Repeat twice for the marquee loop, then duplicate the whole thing for continuity
+const pattern = [...partners, ...partners];
+---
+
+<div class="reel" aria-label="Partner organisations">
+  <div class="reel-track">
+    {
+      pattern.map((p) =>
+        p.img ? (
+          <div class="reel-item">
+            <img src={p.img} alt={p.alt} />
+          </div>
+        ) : (
+          <div class="reel-item text">{p.text}</div>
+        ),
+      )
+    }
+    {
+      pattern.map((p) =>
+        p.img ? (
+          <div class="reel-item" aria-hidden="true">
+            <img src={p.img} alt="" />
+          </div>
+        ) : (
+          <div class="reel-item text" aria-hidden="true">
+            {p.text}
+          </div>
+        ),
+      )
+    }
+  </div>
+</div>

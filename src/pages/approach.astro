@@ -1,0 +1,121 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+---
+
+<Base
+  title="Our Approach — Priory Park Gardens, Hitchin — Metric + Maker"
+  description="A case study of our approach in practice: Priory Park Gardens, Hitchin — a once-in-a-generation residential development in the historic grounds of Hitchin Priory."
+  currentPath="/approach"
+>
+  <PageHeader
+    eyebrow="Our approach, in practice"
+    title="Priory Park Gardens, <em>Hitchin.</em>"
+    lead="A once-in-a-generation residential development within the historic grounds of Hitchin Priory — delivered in joint venture with Myco."
+  />
+
+  <!-- Large sketch image -->
+  <section style="background:var(--paper);padding:0;">
+    <div
+      style="aspect-ratio:21/9;background:url('/assets/Hitchin sketch 1.jpg') center/cover no-repeat, var(--navy);"
+      role="img"
+      aria-label="Architectural watercolour sketch of Radcliffe House gardens"
+    ></div>
+  </section>
+
+  <!-- Key facts band -->
+  <section class="stats" style="padding:clamp(56px,7vw,90px) 0;">
+    <div class="wrap">
+      <div class="stats-grid" style="padding-top:0;border-top:0;grid-template-columns:repeat(4,1fr);">
+        <div class="stat">
+          <div class="num" style="font-size:clamp(26px,2.5vw,34px);">Hitchin</div>
+          <div class="lbl">Herts — 2 mins from Hitchin town centre, 30 mins from London</div>
+        </div>
+        <div class="stat">
+          <div class="num" style="font-size:clamp(26px,2.5vw,34px);">30 acres</div>
+          <div class="lbl">Of landscaped parkland within the historic grounds of Hitchin Priory</div>
+        </div>
+        <div class="stat">
+          <div class="num" style="font-size:clamp(26px,2.5vw,34px);">1–4 bed</div>
+          <div class="lbl">Apartments and houses, design-led, site-sensitive</div>
+        </div>
+        <div class="stat">
+          <div class="num" style="font-size:clamp(26px,2.5vw,34px);">JV</div>
+          <div class="lbl">Delivered in joint venture with Myco</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Narrative -->
+  <section class="band cream">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="num">Project narrative</span></div>
+        <div>
+          <h2>A site, a setting, and a scheme that had to rise to both.</h2>
+          <p style="margin-top:18px;">
+            Priory Park Gardens takes a collection of former office buildings set within 30 acres of
+            landscaped parkland — and reimagines them as a design-led residential scheme that respects
+            and amplifies the site's history.
+          </p>
+          <p style="margin-top:10px;">
+            At just two minutes from Hitchin town centre and thirty minutes from London, the location
+            balances the rhythm of a market town with the reach of the capital. The scheme is pitched
+            at buyers who value setting, architectural quality, and generous outdoor space — and who
+            are underserved by the standardised new-build market.
+          </p>
+        </div>
+      </div>
+
+      <div class="section-head" style="margin-top:clamp(40px,5vw,72px);">
+        <div><span class="num">Our role</span></div>
+        <div>
+          <h2>From land deal to delivery oversight.</h2>
+          <p style="margin-top:18px;">
+            Metric + Maker secured the land deal and is overseeing full development and delivery —
+            from planning and design through to construction and sales. We set the commercial
+            framework, chose the JV partner (Myco), and are hands-on through every stage.
+          </p>
+          <p style="margin-top:10px;">
+            Priory Park Gardens embodies our focus on creating homes and places that are commercially
+            robust, carefully designed, and closely connected to their surroundings.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Approach principles -->
+  <section class="band stone">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="num">How we work</span></div>
+        <div>
+          <h2>Three principles that run through every scheme.</h2>
+        </div>
+      </div>
+
+      <div class="services-grid">
+        <article class="service">
+          <span class="idx">— 01 Discipline</span>
+          <h3>Every deal stacks.</h3>
+          <p>We build our underwriting from the ground up. If the numbers don't work — on planning, build cost, or exit — we don't force the deal. When we do commit, we commit with full conviction.</p>
+        </article>
+        <article class="service">
+          <span class="idx">— 02 Design</span>
+          <h3>Design is where value lives.</h3>
+          <p>We favour schemes where quality of design and setting is central to value — not bolted on after the spreadsheet. Good design pays for itself in planning, sales rate, and reputation.</p>
+        </article>
+        <article class="service">
+          <span class="idx">— 03 Delivery</span>
+          <h3>Hands-on, not hands-off.</h3>
+          <p>We stay close to the work. Our directors sit on site, in planning meetings, in design reviews. Partnership-led doesn't mean passive — it means aligned.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <ContactCTA heading="Have a site that needs <em>this kind of treatment?</em>" />
+</Base>

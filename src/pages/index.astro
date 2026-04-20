@@ -1,0 +1,223 @@
+---
+import Base from '../layouts/Base.astro';
+import StatsBand from '../components/StatsBand.astro';
+import PartnersReel from '../components/PartnersReel.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+---
+
+<Base
+  title="Metric + Maker — Partnership-driven residential development"
+  currentPath="/"
+>
+  <!-- ========== HERO (full-screen drone footage) ========== -->
+  <section class="hero">
+    <video
+      class="hero-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      poster="/assets/Hitchin sketch 1.jpg"
+      aria-hidden="true"
+    >
+      <source src="/assets/Hitchin.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <div>
+        <span class="eyebrow">SME residential &amp; mixed-use developer</span>
+        <h1 style="margin-top:28px;">
+          Ambitious, <em>partnership-driven</em> residential development.
+        </h1>
+        <p class="lead">
+          We deliver high-quality residential and mixed-use schemes through disciplined acquisition,
+          planning-led value creation, and hands-on delivery — in joint venture with landowners,
+          investors, and local authorities.
+        </p>
+        <div class="actions">
+          <a href="/contact" class="btn btn-primary">Start a conversation <span class="btn-arrow">→</span></a>
+          <a href="/what-we-do" class="btn btn-ghost-navy">What we do</a>
+        </div>
+        <div class="meta">
+          <span class="tickmark" aria-hidden="true">
+            <span></span><span></span><span class="plus"></span><span></span><span></span>
+          </span>
+          <span>Est. Herts · London · Active UK-wide</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <span class="line"></span>
+    </div>
+  </section>
+
+  <!-- ========== STATS ========== -->
+  <StatsBand />
+
+  <!-- ========== SERVICES ========== -->
+  <section class="band cream" id="what">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="num">02 — What we do</span>
+        </div>
+        <div>
+          <h2 style="margin-top:12px;">Active across the full development lifecycle.</h2>
+          <p style="margin-top:18px;">
+            From site acquisition through to delivery — working independently and in joint venture with
+            established and new partners. A disciplined, design-led approach, grounded in commercial reality.
+          </p>
+        </div>
+      </div>
+
+      <div class="services-grid">
+        <article class="service">
+          <span class="idx">— 01</span>
+          <h3>Development <em style="color:var(--gold);font-style:normal;">+</em> Contracting</h3>
+          <p>Origination, planning, and delivery of residential and mixed-use schemes, with a focus on well-located sites where active management can create value.</p>
+          <a href="/what-we-do#development" class="more">
+            Read more
+            <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M1 5h12M9 1l4 4-4 4" />
+            </svg>
+          </a>
+        </article>
+        <article class="service">
+          <span class="idx">— 02</span>
+          <h3>Joint Ventures <em style="color:var(--gold);font-style:normal;">+</em> Partnerships</h3>
+          <p>Structuring and delivering projects in partnership with landowners, investors, and local authorities through flexible JV and development management arrangements.</p>
+          <a href="/what-we-do#joint-ventures" class="more">
+            Read more
+            <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M1 5h12M9 1l4 4-4 4" />
+            </svg>
+          </a>
+        </article>
+        <article class="service">
+          <span class="idx">— 03</span>
+          <h3>Land <em style="color:var(--gold);font-style:normal;">+</em> Site Acquisition</h3>
+          <p>Targeting sites with planning potential, repositioning opportunities, or development upside — including off-market and partnership-led transactions.</p>
+          <a href="/what-we-do#land" class="more">
+            Read more
+            <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M1 5h12M9 1l4 4-4 4" />
+            </svg>
+          </a>
+        </article>
+        <article class="service">
+          <span class="idx">— 04</span>
+          <h3>Investment <em style="color:var(--gold);font-style:normal;">+</em> Asset Delivery</h3>
+          <p>Managing projects through the full lifecycle — from acquisition and planning to construction, completion, and exit or long-term hold.</p>
+          <a href="/what-we-do#investment" class="more">
+            Read more
+            <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M1 5h12M9 1l4 4-4 4" />
+            </svg>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURED PROJECT ========== -->
+  <section class="feature" id="approach">
+    <div class="feature-grid">
+      <div
+        class="feature-img"
+        style="background-image:url('/assets/Hitchin sketch 1.jpg');"
+        role="img"
+        aria-label="Architectural sketch of Radcliffe House and gardens, Priory Park Gardens, Hitchin"
+      ></div>
+      <div class="feature-copy">
+        <span class="eyebrow eyebrow-light">03 — Our approach, in practice</span>
+        <h2>Priory Park Gardens, Hitchin.</h2>
+        <div class="subtitle">A once-in-a-generation residential development in the historic grounds of Hitchin Priory.</div>
+        <p>
+          Former office buildings set in 30 acres of landscaped parkland — two minutes from Hitchin
+          town centre, thirty minutes from London. A design-led scheme focused on quality, long-term
+          placemaking, and site-sensitive development, delivered in joint venture with Myco.
+        </p>
+        <div class="feature-facts">
+          <div><div class="k">Location</div><div class="v">Hitchin, Herts</div></div>
+          <div><div class="k">Setting</div><div class="v">30 acres of parkland</div></div>
+          <div><div class="k">Tenure</div><div class="v">1–4 bed apartments &amp; houses</div></div>
+          <div><div class="k">Partner</div><div class="v">JV with Myco</div></div>
+        </div>
+        <div class="actions">
+          <a href="/approach" class="btn btn-ghost-cream">View the case study <span class="btn-arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PEOPLE ========== -->
+  <section class="band cream" id="people">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="num">04 — Our people</span></div>
+        <div>
+          <h2 style="margin-top:12px;">Four founders. One tight-knit, commercially minded team.</h2>
+          <p style="margin-top:18px;">
+            Experts and innovators with a background in delivering for leading developers, private
+            investors, and JV partnerships — and a passion for creating places where people and
+            communities can thrive.
+          </p>
+        </div>
+      </div>
+
+      <div class="people-grid">
+        <article class="person">
+          <div class="portrait"><span class="tag">Photo to follow</span></div>
+          <div class="role">Partnerships + Land Acquisition</div>
+          <h3>Bradley Goding</h3>
+          <p class="bio">18+ years in real estate. Secured sites for 1,700+ homes with a combined GDV over £1.1bn. Entrepreneurial leader and people-first operator.</p>
+          <a class="email" href="mailto:brad@metricandmaker.com">brad@metricandmaker.com</a>
+        </article>
+        <article class="person">
+          <div class="portrait"><span class="tag">Photo to follow</span></div>
+          <div class="role">Investments + New Business</div>
+          <h3>Matthew Tucker</h3>
+          <p class="bio">Previously led teams at JLL and WSP. 15+ years supporting £700m+ of development finance. Detail is his default — every deal stacks.</p>
+          <a class="email" href="mailto:matt@metricandmaker.com">matt@metricandmaker.com</a>
+        </article>
+        <article class="person">
+          <div class="portrait"><span class="tag">Photo to follow</span></div>
+          <div class="role">Commercial Operations</div>
+          <h3>James Hutchins</h3>
+          <p class="bio">15+ years in mixed-use residential development. Delivered 1,700+ homes at a combined build cost of £555m+. Cost control, quality, programme.</p>
+          <a class="email" href="mailto:james@metricandmaker.com">james@metricandmaker.com</a>
+        </article>
+        <article class="person">
+          <div class="portrait"><span class="tag">Photo to follow</span></div>
+          <div class="role">Design + Planning</div>
+          <h3>Sam Roberts</h3>
+          <p class="bio">15+ years in mixed-use residential. Delivered 1,750+ homes at £650m+ build cost. Turns big ideas into things that actually get built.</p>
+          <a class="email" href="mailto:sam@metricandmaker.com">sam@metricandmaker.com</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PARTNERS ========== -->
+  <section class="band stone" id="partners" style="padding-top:clamp(60px,7vw,100px);padding-bottom:clamp(60px,7vw,100px);">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:36px;">
+        <div><span class="num">05 — Network &amp; partners</span></div>
+        <div>
+          <h2 style="margin-top:12px;font-size:clamp(26px,3vw,40px);">A trusted network of architects, planners, designers, and contractors.</h2>
+          <p style="margin-top:14px;">
+            A deep bench of industry-leading organisations we've delivered with time and again over the
+            last two decades — letting us work with speed, trust and transparency while staying close
+            to every detail.
+          </p>
+        </div>
+      </div>
+      <PartnersReel />
+    </div>
+  </section>
+
+  <!-- ========== CONTACT CTA ========== -->
+  <ContactCTA />
+</Base>

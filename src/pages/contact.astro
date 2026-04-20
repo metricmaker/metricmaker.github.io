@@ -1,0 +1,78 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+---
+
+<Base
+  title="Contact — Metric + Maker"
+  description="Get in touch with Metric + Maker. We welcome conversations with landowners, investors, and partners at all stages."
+  currentPath="/contact"
+>
+  <PageHeader
+    eyebrow="Let's work together"
+    title="Got a site, a scheme, or a <em>conversation worth having?</em>"
+    lead="We welcome conversations with landowners, investors, and partners at all stages, and are comfortable working across a range of structures."
+  />
+
+  <section class="band cream">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <h3>Our current focus</h3>
+          <ul>
+            <li>Residential and mixed-use development sites</li>
+            <li>Land with planning potential</li>
+            <li>Partnership and joint venture opportunities</li>
+            <li>Schemes where design and setting are central to value</li>
+            <li>Projects where a hands-on, partner-led approach is preferred</li>
+          </ul>
+
+          <h3>How we work with partners</h3>
+          <ul>
+            <li>Joint ventures</li>
+            <li>Development management agreements</li>
+            <li>Equity partnerships</li>
+            <li>Option and promotion arrangements</li>
+          </ul>
+
+          <h3>Speed of response</h3>
+          <p style="color:var(--ink-mute);margin:0 0 10px;">
+            We try to respond to all serious enquiries within two working days. For land and
+            partnership enquiries, the quickest route is direct to Brad; for investment and new-business
+            conversations, direct to Matt.
+          </p>
+        </div>
+
+        <aside style="display:flex;flex-direction:column;gap:20px;">
+          <div class="contact-card">
+            <span class="label">Partnerships &amp; Land</span>
+            <span class="name">Bradley Goding</span>
+            <a href="mailto:brad@metricandmaker.com">brad@metricandmaker.com</a>
+          </div>
+          <div class="contact-card">
+            <span class="label">Investments &amp; New Business</span>
+            <span class="name">Matthew Tucker</span>
+            <a href="mailto:matt@metricandmaker.com">matt@metricandmaker.com</a>
+          </div>
+          <div class="contact-card">
+            <span class="label">Commercial Operations</span>
+            <span class="name">James Hutchins</span>
+            <a href="mailto:james@metricandmaker.com">james@metricandmaker.com</a>
+          </div>
+          <div class="contact-card">
+            <span class="label">Design &amp; Planning</span>
+            <span class="name">Sam Roberts</span>
+            <a href="mailto:sam@metricandmaker.com">sam@metricandmaker.com</a>
+          </div>
+          <div class="contact-card" style="background:var(--navy);color:var(--paper);border-color:var(--navy);">
+            <span class="label" style="color:var(--gold-soft);">General enquiries</span>
+            <span class="name" style="color:var(--paper);">hello@metricandmaker.com</span>
+            <a href="mailto:hello@metricandmaker.com" style="color:var(--gold-soft);border-bottom-color:rgba(255,255,255,0.2);">
+              hello@metricandmaker.com
+            </a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</Base>

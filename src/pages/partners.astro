@@ -1,0 +1,83 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import PartnersReel from '../components/PartnersReel.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+
+const partners = [
+  {
+    img: '/assets/myco_logo.webp',
+    alt: 'Myco',
+    name: 'Myco',
+    role: 'Joint-venture development partner',
+    blurb:
+      'Our JV partner on Priory Park Gardens, Hitchin. A design-led developer with a track record of site-sensitive residential schemes.',
+  },
+  {
+    img: '/assets/HTA.webp',
+    alt: 'HTA',
+    name: 'HTA',
+    role: 'Architecture & urban design',
+    blurb:
+      'One of the UK\'s leading residential architects and masterplanners. We\'ve delivered with HTA across multiple joint-venture and policy-led schemes.',
+  },
+  {
+    img: '/assets/youth.webp',
+    alt: 'Youth',
+    name: 'Youth',
+    role: 'Branding & creative',
+    blurb:
+      "The studio behind the Metric + Maker brand — and creative partners we turn to for scheme identity, wayfinding, and launch collateral.",
+  },
+  {
+    text: 'C O P P E R C O A S T',
+    name: 'Coppercoast',
+    role: 'Interior design',
+    blurb:
+      'Residential interior design partner — responsible for the considered material palettes and lifestyle-led specifications on our schemes.',
+  },
+];
+---
+
+<Base
+  title="Partners & Network — Metric + Maker"
+  description="A trusted network of architects, planners, designers, and contractors we've delivered with time and again over the last two decades."
+  currentPath="/partners"
+>
+  <PageHeader
+    eyebrow="Network & partners"
+    title="A trusted network of architects, planners, designers, <em>and contractors.</em>"
+    lead="Our network is a deep bench of industry-leading organisations we've delivered with time and again over the last two decades — letting us work with speed, trust and transparency while staying close to every detail."
+  />
+
+  <section class="band cream">
+    <div class="wrap">
+      <PartnersReel />
+
+      <div class="partners-detail">
+        {
+          partners.map((p) => (
+            <article class="partner-card">
+              <div class="logo">
+                {p.img ? <img src={p.img} alt={p.alt} /> : <span class="text">{p.text}</span>}
+              </div>
+              <h3>{p.name}</h3>
+              <div class="eyebrow" style="color:var(--gold);">{p.role}</div>
+              <p>{p.blurb}</p>
+            </article>
+          ))
+        }
+      </div>
+
+      <div style="margin-top:clamp(40px,5vw,72px);max-width:70ch;">
+        <p class="lead">
+          This is a curated snapshot — we work with a wider bench of specialists brought in to match
+          the needs of each scheme. For a particular introduction, or to be considered for our wider
+          network, please get in touch.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <ContactCTA heading="Part of the residential supply chain? <em>We'd like to hear from you.</em>" />
+</Base>

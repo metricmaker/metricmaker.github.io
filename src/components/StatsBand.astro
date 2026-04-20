@@ -1,0 +1,40 @@
+---
+interface Props {
+  eyebrow?: string;
+  heading?: string;
+  intro?: string;
+}
+const {
+  eyebrow = '01 — Track record',
+  heading = 'Sixty years of combined experience, channelled into every deal we do.',
+  intro = 'Prior to founding Metric + Maker, our directors collectively delivered thousands of homes, managed over a billion pounds of senior debt, and raised nine-figure equity for leading residential developers in London.',
+} = Astro.props;
+---
+
+<section class="stats" id="track-record">
+  <div class="wrap">
+    <div class="stats-head">
+      <span class="eyebrow eyebrow-light">{eyebrow}</span>
+      <h2 style="margin-top:16px;">{heading}</h2>
+      <p>{intro}</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="num">5,000<span style="color:var(--gold-soft)">+</span></div>
+        <div class="lbl">Homes delivered across private-for-sale and affordable tenure</div>
+      </div>
+      <div class="stat">
+        <div class="num">£1bn<span style="color:var(--gold-soft)">+</span></div>
+        <div class="lbl">Development debt originated and managed</div>
+      </div>
+      <div class="stat">
+        <div class="num">£200m<span style="color:var(--gold-soft)">+</span></div>
+        <div class="lbl">Equity raised for SME residential schemes</div>
+      </div>
+      <div class="stat">
+        <div class="num">60<span style="color:var(--gold-soft)"> yrs</span></div>
+        <div class="lbl">Combined director experience across the property lifecycle</div>
+      </div>
+    </div>
+  </div>
+</section>

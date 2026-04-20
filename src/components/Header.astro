@@ -1,0 +1,37 @@
+---
+interface Props {
+  currentPath?: string;
+}
+const { currentPath = '/' } = Astro.props;
+
+const links = [
+  { href: '/what-we-do', label: 'What we do' },
+  { href: '/approach', label: 'Approach' },
+  { href: '/people', label: 'People' },
+  { href: '/partners', label: 'Partners' },
+];
+
+function isActive(href: string) {
+  if (href === '/') return currentPath === '/';
+  return currentPath.startsWith(href);
+}
+---
+
+<header class="site">
+  <div class="wrap bar">
+    <a href="/" class="brand" aria-label="Metric + Maker — home">
+      <img src="/assets/logo-navy.svg" alt="Metric + Maker" />
+    </a>
+    <nav class="primary" aria-label="Primary">
+      {
+        links.map((l) => (
+          <a href={l.href} class:list={[{ active: isActive(l.href) }]}>
+            {l.label}
+          </a>
+        ))
+      }
+      <a href="/contact" class="nav-cta">Partner with us <span class="arr">→</span></a>
+    </nav>
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
+  </div>
+</header>

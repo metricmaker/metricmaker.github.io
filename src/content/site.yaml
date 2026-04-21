@@ -36,12 +36,12 @@ nav:
 # -- HOMEPAGE ---------------------------------------------------------
 home:
   hero:
-    eyebrow: "SME residential & mixed-use developer"
+    eyebrow: "Metric + Maker"
     headline: "Ambitious, <em>partnership-driven</em> residential development."
-    lead: "We deliver high-quality residential and mixed-use schemes through disciplined acquisition, planning-led value creation, and hands-on delivery — in joint venture with landowners, investors, and local authorities."
+    lead: "We deliver high-quality residential and mixed-use schemes through disciplined acquisition, planning-led value creation, and hands-on delivery — in partnership with landowners, investors, and local authorities."
     ctaPrimary: "Start a conversation"
     ctaSecondary: "What we do"
-    meta: "Est. Herts · London · Active UK-wide"
+    meta: "London + Home Counties"
 
   servicesSection:
     number: "02 — What we do"

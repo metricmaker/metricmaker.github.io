@@ -11,6 +11,8 @@
     "astro": "node ./node_modules/astro/astro.js"
   },
   "dependencies": {
-    "astro": "^5.3.0"
+    "@types/js-yaml": "^4.0.9",
+    "astro": "^5.3.0",
+    "js-yaml": "^4.1.1"
   }
 }

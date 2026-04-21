@@ -1,15 +1,12 @@
 ---
+import { content } from '../content';
+
 interface Props {
   currentPath?: string;
 }
 const { currentPath = '/' } = Astro.props;
 
-const links = [
-  { href: '/what-we-do', label: 'What we do' },
-  { href: '/approach', label: 'Approach' },
-  { href: '/people', label: 'People' },
-  { href: '/partners', label: 'Partners' },
-];
+const { nav } = content;
 
 function isActive(href: string) {
   if (href === '/') return currentPath === '/';
@@ -24,13 +21,13 @@ function isActive(href: string) {
     </a>
     <nav class="primary" aria-label="Primary">
       {
-        links.map((l) => (
+        nav.links.map((l) => (
           <a href={l.href} class:list={[{ active: isActive(l.href) }]}>
             {l.label}
           </a>
         ))
       }
-      <a href="/contact" class="nav-cta">Partner with us <span class="arr">→</span></a>
+      <a href="/contact" class="nav-cta">{nav.ctaLabel} <span class="arr">→</span></a>
     </nav>
     <button class="menu-toggle" aria-label="Open menu">☰</button>
   </div>

@@ -1,45 +1,33 @@
 ---
 import { content } from '../content';
-
-interface Props {
-  /** Which page is this being shown on? Picks the heading override. */
-  pageKey?: string;
-}
-const { pageKey } = Astro.props;
 const cta = content.contactCta;
-
-// Pick the heading for this page, or fall back to the default.
-const heading = (pageKey && cta.headings[pageKey]) || cta.defaultHeading;
 ---
 
 <section class="cta" id="contact">
   <div class="wrap cta-inner">
     <div class="left">
-      <span class="eyebrow eyebrow-light">{cta.eyebrow}</span>
-      <h2 style="margin-top:20px;" set:html={heading} />
+      <span class="eyebrow eyebrow-light">{cta.number}</span>
+      <h2 style="margin-top:20px;" set:html={cta.heading} />
     </div>
     <div class="right">
       <p>{cta.body}</p>
       <div class="emails">
         {
-          content.directors
-            .filter((d) => d.email === 'brad@metricandmaker.com' || d.email === 'matt@metricandmaker.com')
-            .map((d) => (
-              <a href={`mailto:${d.email}`}>
-                {d.email} — {d.role.split(' + ')[0]}
-              </a>
-            ))
+          cta.contactLines.map((c) => (
+            <a href={`mailto:${c.email}`}>
+              {c.label}: {c.email}
+            </a>
+          ))
         }
       </div>
       <div class="actions">
         <a
-          href={`mailto:${content.contact.generalEmail}`}
+          href={cta.ctaHref}
           class="btn btn-primary"
           style="background:var(--gold);color:var(--navy);"
         >
-          {cta.primaryCtaLabel} <span class="btn-arrow">→</span>
+          {cta.ctaLabel} <span class="btn-arrow">→</span>
         </a>
-        <a href="/contact" class="btn btn-ghost-cream">{cta.secondaryCtaLabel}</a>
       </div>
     </div>
   </div>

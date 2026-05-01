@@ -1,32 +1,25 @@
 ---
 import { content } from '../content';
-
-interface Props {
-  /** Which stats block to use. 'default' = homepage, 'people' = /people variant */
-  variant?: 'default' | 'people';
-}
-const { variant = 'default' } = Astro.props;
-
-const block = variant === 'people' ? content.statsPeopleVariant : content.stats;
-const items = block.items ?? content.stats.items ?? [];
+const { stats } = content;
 ---
 
 <section class="stats" id="track-record">
   <div class="wrap">
     <div class="stats-head">
-      <span class="eyebrow eyebrow-light">{block.eyebrow}</span>
-      <h2 style="margin-top:16px;">{block.heading}</h2>
-      <p>{block.intro}</p>
+      <span class="eyebrow eyebrow-light">{stats.number}</span>
+      <h2 style="margin-top:16px;">{stats.heading}</h2>
+      <p>{stats.intro}</p>
     </div>
     <div class="stats-grid">
       {
-        items.map((s) => (
+        stats.items.map((s) => (
           <div class="stat">
             <div class="num">
               {s.number}
               {s.suffix && <span style="color:var(--gold-soft)">{s.suffix}</span>}
             </div>
-            <div class="lbl">{s.label}</div>
+            {s.label && <div class="num-label">{s.label}</div>}
+            {s.sub && <div class="lbl">{s.sub}</div>}
           </div>
         ))
       }

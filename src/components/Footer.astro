@@ -9,7 +9,7 @@ const { nav, site } = content;
     <div>© {year} {site.footerCopyright}</div>
     <nav class="foot-nav" aria-label="Footer">
       {nav.links.map((l) => <a href={l.href}>{l.label}</a>)}
-      <a href="/contact">Contact</a>
+      <a href={nav.cta.href}>{nav.cta.label}</a>
     </nav>
   </div>
 </footer>

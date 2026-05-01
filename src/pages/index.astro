@@ -1,14 +1,24 @@
 ---
 import Base from '../layouts/Base.astro';
 import StatsBand from '../components/StatsBand.astro';
-import PartnersReel from '../components/PartnersReel.astro';
 import ContactCTA from '../components/ContactCTA.astro';
 import { content } from '../content';
 
-const { home, site, whatWeDo, directors } = content;
+const {
+  site,
+  hero,
+  whatWeDo,
+  approach,
+  opportunities,
+  people,
+  directors,
+  partners,
+} = content;
 ---
 
-<Base title={site.title} description={site.description} currentPath="/">
+<Base title={site.title} description={site.description}>
+  <span id="top"></span>
+
   <!-- ========== HERO (full-screen drone footage) ========== -->
   <section class="hero">
     <video
@@ -26,20 +36,19 @@ const { home, site, whatWeDo, directors } = content;
     <div class="hero-overlay" aria-hidden="true"></div>
     <div class="wrap hero-inner">
       <div>
-        <span class="eyebrow">{home.hero.eyebrow}</span>
-        <h1 style="margin-top:28px;" set:html={home.hero.headline} />
-        <p class="lead">{home.hero.lead}</p>
+        <h1 set:html={hero.headline} />
+        <p
+          class="lead"
+          style="margin-top:32px;font-family:var(--serif);font-style:italic;color:var(--gold-soft);font-size:clamp(20px,1.8vw,28px);max-width:48ch;"
+        >
+          {hero.subheading}
+        </p>
+        <p class="lead">{hero.body}</p>
         <div class="actions">
-          <a href="/contact" class="btn btn-primary">
-            {home.hero.ctaPrimary} <span class="btn-arrow">→</span>
+          <a href="#contact" class="btn btn-primary">
+            {hero.ctaPrimary} <span class="btn-arrow">→</span>
           </a>
-          <a href="/what-we-do" class="btn btn-ghost-navy">{home.hero.ctaSecondary}</a>
-        </div>
-        <div class="meta">
-          <span class="tickmark" aria-hidden="true">
-            <span></span><span></span><span class="plus"></span><span></span><span></span>
-          </span>
-          <span>{home.hero.meta}</span>
+          <a href="#what-we-do" class="btn btn-ghost-navy">{hero.ctaSecondary}</a>
         </div>
       </div>
     </div>
@@ -49,19 +58,17 @@ const { home, site, whatWeDo, directors } = content;
     </div>
   </section>
 
-  <!-- ========== STATS ========== -->
+  <!-- ========== TRACK RECORD ========== -->
   <StatsBand />
 
-  <!-- ========== SERVICES ========== -->
-  <section class="band cream" id="what">
+  <!-- ========== WHAT WE DO ========== -->
+  <section class="band cream" id="what-we-do">
     <div class="wrap">
       <div class="section-head">
+        <div><span class="num">{whatWeDo.number}</span></div>
         <div>
-          <span class="num">{home.servicesSection.number}</span>
-        </div>
-        <div>
-          <h2 style="margin-top:12px;">{home.servicesSection.heading}</h2>
-          <p style="margin-top:18px;">{home.servicesSection.intro}</p>
+          <h2 style="margin-top:12px;">{whatWeDo.heading}</h2>
+          <p style="margin-top:18px;">{whatWeDo.intro}</p>
         </div>
       </div>
 
@@ -74,13 +81,7 @@ const { home, site, whatWeDo, directors } = content;
                 '+',
                 '<em style="color:var(--gold);font-style:normal;">+</em>',
               )} />
-              <p>{s.summary}</p>
-              <a href={`/what-we-do#${s.id}`} class="more">
-                Read more
-                <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M1 5h12M9 1l4 4-4 4" />
-                </svg>
-              </a>
+              <p>{s.body}</p>
             </article>
           ))
         }
@@ -88,47 +89,87 @@ const { home, site, whatWeDo, directors } = content;
     </div>
   </section>
 
-  <!-- ========== FEATURED PROJECT ========== -->
-  <section class="feature" id="approach">
-    <div class="feature-grid">
-      <div
-        class="feature-img"
-        style="background-image:url('/assets/Hitchin sketch 1.jpg');"
-        role="img"
-        aria-label="Architectural sketch of Radcliffe House and gardens, Priory Park Gardens, Hitchin"
-      ></div>
-      <div class="feature-copy">
-        <span class="eyebrow eyebrow-light">{home.featureProject.eyebrow}</span>
-        <h2>{home.featureProject.title}</h2>
-        <div class="subtitle">{home.featureProject.subtitle}</div>
-        <p>{home.featureProject.body}</p>
-        <div class="feature-facts">
-          {
-            home.featureProject.facts.map((f) => (
-              <div>
-                <div class="k">{f.key}</div>
-                <div class="v" set:html={f.value} />
+  <!-- ========== OUR APPROACH (case study) ========== -->
+  {
+    approach.enabled && (
+      <section class="band stone" id="approach">
+        <div class="wrap">
+          <div class="section-head">
+            <div><span class="num">{approach.number}</span></div>
+            <div>
+              <h2 set:html={approach.heading} />
+            </div>
+          </div>
+
+          <div class="case-study-grid">
+            <div
+              class="case-study-image"
+              style="background-image:url('/assets/Hitchin sketch 1.jpg');"
+              role="img"
+              aria-label="Architectural sketch of the gardens at Priory Park Gardens, Hitchin"
+            />
+            <div class="case-study-copy">
+              <h3>{approach.caseStudy.title}</h3>
+              {approach.caseStudy.paragraphs.map((p) => <p>{p}</p>)}
+              <div class="case-study-facts">
+                {
+                  approach.caseStudy.facts.map((f) => (
+                    <div class="fact">
+                      <div class="k">{f.key}</div>
+                      <div class="v">{f.value}</div>
+                    </div>
+                  ))
+                }
               </div>
-            ))
-          }
+              <div class="cta-row">
+                <a
+                  href={approach.caseStudy.ctaHref}
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-ghost-navy"
+                >
+                  {approach.caseStudy.ctaLabel} <span class="btn-arrow">→</span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="actions">
-          <a href="/approach" class="btn btn-ghost-cream">
-            {home.featureProject.ctaLabel} <span class="btn-arrow">→</span>
-          </a>
+      </section>
+    )
+  }
+
+  <!-- ========== OPPORTUNITIES ========== -->
+  <section class="band cream" id="opportunities">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="num">{opportunities.number}</span></div>
+        <div>
+          <h2 style="margin-top:12px;">{opportunities.heading}</h2>
+          <p style="margin-top:18px;">{opportunities.intro}</p>
         </div>
+      </div>
+
+      <div class="opportunities-grid">
+        {
+          opportunities.criteria.map((c) => (
+            <div class="opportunity">
+              <span class="plus" aria-hidden="true" />
+              <p>{c}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
 
-  <!-- ========== PEOPLE ========== -->
-  <section class="band cream" id="people">
+  <!-- ========== OUR PEOPLE ========== -->
+  <section class="band stone" id="people">
     <div class="wrap">
       <div class="section-head">
-        <div><span class="num">{home.peopleSection.number}</span></div>
+        <div><span class="num">{people.number}</span></div>
         <div>
-          <h2 style="margin-top:12px;">{home.peopleSection.heading}</h2>
-          <p style="margin-top:18px;">{home.peopleSection.intro}</p>
+          <h2 style="margin-top:12px;">{people.heading}</h2>
+          <p style="margin-top:18px;">{people.intro}</p>
         </div>
       </div>
 
@@ -139,10 +180,8 @@ const { home, site, whatWeDo, directors } = content;
               <div class="portrait"><span class="tag">Photo to follow</span></div>
               <div class="role">{d.role}</div>
               <h3>{d.name}</h3>
-              <p class="bio">{d.shortBio}</p>
-              <a class="email" href={`mailto:${d.email}`}>
-                {d.email}
-              </a>
+              <p class="bio">{d.bio}</p>
+              <a class="email" href={`mailto:${d.email}`}>{d.email}</a>
             </article>
           ))
         }
@@ -150,21 +189,35 @@ const { home, site, whatWeDo, directors } = content;
     </div>
   </section>
 
-  <!-- ========== PARTNERS ========== -->
-  <section
-    class="band stone"
-    id="partners"
-    style="padding-top:clamp(60px,7vw,100px);padding-bottom:clamp(60px,7vw,100px);"
-  >
+  <!-- ========== NETWORK & PARTNERS ========== -->
+  <section class="band cream" id="partners">
     <div class="wrap">
-      <div class="section-head" style="margin-bottom:36px;">
-        <div><span class="num">{home.partnersSection.number}</span></div>
+      <div class="section-head">
+        <div><span class="num">{partners.number}</span></div>
         <div>
-          <h2 style="margin-top:12px;font-size:clamp(26px,3vw,40px);">{home.partnersSection.heading}</h2>
-          <p style="margin-top:14px;">{home.partnersSection.intro}</p>
+          <h2 style="margin-top:12px;">{partners.heading}</h2>
+          <p style="margin-top:18px;">{partners.intro}</p>
         </div>
       </div>
-      <PartnersReel />
+
+      <div class="partners-detail">
+        {
+          partners.items.map((p) => (
+            <article class="partner-card">
+              <div class="logo">
+                {p.img ? (
+                  <img src={p.img} alt={p.alt ?? p.name} />
+                ) : (
+                  <span class="text">{p.textLogo}</span>
+                )}
+              </div>
+              <h3>{p.name}</h3>
+              <div class="eyebrow" style="color:var(--gold);">{p.role}</div>
+              <p>{p.blurb}</p>
+            </article>
+          ))
+        }
+      </div>
     </div>
   </section>
 

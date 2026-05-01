@@ -273,7 +273,14 @@ section.stats {
   font-weight: 400;
   letter-spacing: -0.02em;
 }
-.stat .lbl { margin-top: 14px; font-size: 14px; color: rgba(255,255,255,0.72); line-height: 1.5; max-width: 22ch; }
+.stat .num-label {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--paper);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.stat .lbl { margin-top: 6px; font-size: 13.5px; color: rgba(255,255,255,0.66); line-height: 1.5; max-width: 24ch; }
 
 /* --- Section helpers --- */
 section.band { padding: clamp(80px, 10vw, 140px) 0; }
@@ -434,6 +441,112 @@ section.feature { background: var(--navy); color: var(--paper); padding: 0; over
 .person .bio { font-size: 14.5px; color: var(--ink-mute); }
 .person a.email { font-size: 13px; color: var(--navy); border-bottom: 1px solid var(--ink-faint); padding-bottom: 2px; align-self: flex-start; }
 .person a.email:hover { border-bottom-color: var(--gold); }
+
+/* --- Opportunities (criteria list) --- */
+.opportunities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--line-cream);
+}
+.opportunity {
+  padding: clamp(28px, 3vw, 40px) clamp(24px, 3vw, 36px);
+  border-bottom: 1px solid var(--line-cream);
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  transition: background .2s ease;
+}
+.opportunity:hover { background: rgba(0, 31, 54, 0.03); }
+.opportunity:nth-child(odd) { border-right: 1px solid var(--line-cream); }
+.opportunity .plus {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  position: relative;
+  margin-top: 4px;
+}
+.opportunity .plus::before,
+.opportunity .plus::after {
+  content: "";
+  position: absolute;
+  background: var(--gold);
+}
+.opportunity .plus::before { left: 50%; top: 0; bottom: 0; width: 2px; transform: translateX(-50%); }
+.opportunity .plus::after { top: 50%; left: 0; right: 0; height: 2px; transform: translateY(-50%); }
+.opportunity p { margin: 0; font-size: clamp(15px, 1.2vw, 17px); line-height: 1.5; color: var(--ink); }
+
+/* --- Approach / case study (single-page treatment) --- */
+.case-study-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 5vw, 80px);
+  align-items: start;
+  margin-top: clamp(40px, 5vw, 64px);
+}
+.case-study-image {
+  aspect-ratio: 4/3;
+  background-size: cover;
+  background-position: center;
+  background-color: #0A2A44;
+}
+.case-study-copy h3 {
+  font-size: clamp(28px, 3vw, 40px);
+  margin-bottom: 18px;
+}
+.case-study-copy p { color: var(--ink-mute); margin: 0 0 14px; }
+.case-study-facts {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line-cream);
+}
+.case-study-facts .fact { font-size: 14px; }
+.case-study-facts .k { color: var(--gold); letter-spacing: 0.08em; text-transform: uppercase; font-size: 11px; margin-bottom: 4px; font-weight: 500; }
+.case-study-facts .v { color: var(--navy); }
+.case-study-copy .cta-row { margin-top: 28px; }
+
+/* --- People (single-page, 4-up with full bios) --- */
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(20px, 2.5vw, 36px);
+}
+.people-grid .person { display: flex; flex-direction: column; gap: 16px; }
+.people-grid .person .portrait {
+  aspect-ratio: 4/5;
+  background: linear-gradient(160deg, #2A3B52 0%, var(--navy) 100%);
+  position: relative;
+  overflow: hidden;
+}
+.people-grid .person .portrait::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/mark-gold.svg');
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.18;
+}
+.people-grid .person .portrait .tag {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 4px 8px;
+}
+.people-grid .person h3 { font-size: clamp(20px, 1.8vw, 24px); }
+.people-grid .person .role { font-size: 12px; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; }
+.people-grid .person .bio { font-size: 14.5px; color: var(--ink-mute); line-height: 1.55; }
+.people-grid .person a.email { font-size: 13px; color: var(--navy); border-bottom: 1px solid var(--ink-faint); padding-bottom: 2px; align-self: flex-start; }
+.people-grid .person a.email:hover { border-bottom-color: var(--gold); }
 
 /* People detail grid (2-column detailed bios on /people) */
 .people-detail {
@@ -684,6 +797,10 @@ footer.site .foot-nav { display: flex; gap: 24px; flex-wrap: wrap; }
   .cta-inner { grid-template-columns: 1fr; gap: 40px; }
   .section-head { grid-template-columns: 1fr; gap: 16px; }
   .contact-grid { grid-template-columns: 1fr; }
+  .opportunities-grid { grid-template-columns: 1fr; }
+  .opportunity:nth-child(odd) { border-right: 0; }
+  .case-study-grid { grid-template-columns: 1fr; }
+  .case-study-image { aspect-ratio: 16/10; }
 }
 @media (max-width: 540px) {
   .stats-grid { grid-template-columns: 1fr; }

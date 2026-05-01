@@ -18,302 +18,189 @@
 
 # -- Site-wide defaults ------------------------------------------------
 site:
-  title: "Metric + Maker — Partnership-driven residential development"
+  title: "Metric + Maker — Partnership-driven property development"
   description: "Metric + Maker is an SME residential and mixed-use developer. We deliver high-quality schemes through disciplined acquisition, planning-led value creation, and hands-on delivery."
   footerCopyright: "Metric + Maker Ltd. All rights reserved."
 
 
 # -- Top navigation ---------------------------------------------------
+# The site is single-page; nav links jump to anchored sections.
+# Add { label: "Approach", href: "#approach" } here once Priory Park
+# Gardens is publicly announced (it's already on the page below).
 nav:
-  ctaLabel: "Partner with us"
   links:
-    - { label: "What we do", href: "/what-we-do" }
-    - { label: "Approach",   href: "/approach" }
-    - { label: "People",     href: "/people" }
-    - { label: "Partners",   href: "/partners" }
+    - { label: "What we do",    href: "#what-we-do" }
+    - { label: "Opportunities", href: "#opportunities" }
+    - { label: "People",        href: "#people" }
+    - { label: "Partners",      href: "#partners" }
+  cta:
+    label: "Contact"
+    href: "#contact"
 
 
-# -- HOMEPAGE ---------------------------------------------------------
-home:
-  hero:
-    eyebrow: "Metric + Maker"
-    headline: "Ambitious, <em>partnership-driven</em> residential development."
-    lead: "We deliver high-quality residential and mixed-use schemes through disciplined acquisition, planning-led value creation, and hands-on delivery — in partnership with landowners, investors, and local authorities."
-    ctaPrimary: "Start a conversation"
-    ctaSecondary: "What we do"
-    meta: "London + Home Counties"
-
-  servicesSection:
-    number: "02 — What we do"
-    heading: "Active across the full development lifecycle."
-    intro: "From site acquisition through to delivery — working independently and in joint venture with established and new partners. A disciplined, design-led approach, grounded in commercial reality."
-
-  featureProject:
-    eyebrow: "03 — Our approach, in practice"
-    title: "Priory Park Gardens, Hitchin."
-    subtitle: "A once-in-a-generation residential development in the historic grounds of Hitchin Priory."
-    body: "Former office buildings set in 30 acres of landscaped parkland — two minutes from Hitchin town centre, thirty minutes from London. A design-led scheme focused on quality, long-term placemaking, and site-sensitive development, delivered in joint venture with Myco."
-    ctaLabel: "View the case study"
-    facts:
-      - { key: "Location", value: "Hitchin, Herts" }
-      - { key: "Setting",  value: "30 acres of parkland" }
-      - { key: "Tenure",   value: "1–4 bed apartments & houses" }
-      - { key: "Partner",  value: "JV with Myco" }
-
-  peopleSection:
-    number: "04 — Our people"
-    heading: "Four founders. One tight-knit, commercially minded team."
-    intro: "Experts and innovators with a background in delivering for leading developers, private investors, and JV partnerships — and a passion for creating places where people and communities can thrive."
-
-  partnersSection:
-    number: "05 — Network & partners"
-    heading: "A trusted network of architects, planners, designers, and contractors."
-    intro: "A deep bench of industry-leading organisations we've delivered with time and again over the last two decades — letting us work with speed, trust and transparency while staying close to every detail."
+# -- HERO ------------------------------------------------------------
+hero:
+  headline: "Ambitious, <em>partnership-driven</em> property development."
+  subheading: "Carefully selected sites, creative design, and disciplined delivery."
+  body: "We partner with landowners, investors, and local authorities to create exceptional homes and places that people can be proud of."
+  ctaPrimary: "Start a conversation"
+  ctaSecondary: "What we do"
 
 
 # -- TRACK RECORD / STATS BAND ---------------------------------------
-# Used on the homepage and the People page.
 stats:
-  eyebrow: "01 — Track record"
-  heading: "Sixty years of combined experience, channelled into every deal we do."
-  intro: "Prior to founding Metric + Maker, our directors collectively delivered thousands of homes, managed over a billion pounds of senior debt, and raised nine-figure equity for leading residential developers in London."
+  number: "01 — Track record"
+  heading: "The numbers behind the name."
+  intro: "Prior to founding Metric + Maker, our directors delivered thousands of homes, managed over a billion pounds of senior debt, and raised nine-figure equity for leading residential developers across London and the South East."
   items:
-    - { number: "5,000", suffix: "+",   label: "Homes delivered across private-for-sale and affordable tenure" }
-    - { number: "£1bn",  suffix: "+",   label: "Development debt originated and managed" }
-    - { number: "£200m", suffix: "+",   label: "Equity raised for SME residential schemes" }
-    - { number: "60",    suffix: " yrs", label: "Combined director experience across the property lifecycle" }
+    - number: "5,000"
+      suffix: "+"
+      label: "homes"
+      sub: "Across private-for-sale and affordable tenure"
+    - number: "£1bn"
+      suffix: "+"
+      label: "debt"
+      sub: "Senior investment capital originated and managed"
+    - number: "£200m"
+      suffix: "+"
+      label: "equity"
+      sub: "Raised for award-winning residential schemes"
+    - number: "60"
+      suffix: "+"
+      label: "yrs combined"
+      sub: "Director experience across the development lifecycle"
 
-# Alternative heading for when the stats band appears on the People page.
-statsPeopleVariant:
-  eyebrow: "Combined track record"
-  heading: "Prior to Metric + Maker — the numbers that sit behind the team."
-  intro: "Before founding the business, our directors collectively delivered thousands of homes, managed over a billion pounds of senior debt, and raised nine-figure equity for some of the most respected residential developers in London."
 
-
-# -- WHAT WE DO PAGE --------------------------------------------------
+# -- WHAT WE DO ------------------------------------------------------
 whatWeDo:
-  seoTitle: "What we do — Metric + Maker"
-  seoDescription: "Metric + Maker is active across the full development lifecycle: development & contracting, joint ventures, land & site acquisition, investment & asset delivery."
-  header:
-    eyebrow: "What we do"
-    title: "Active across the full development <em>lifecycle.</em>"
-    lead: "From site acquisition through to delivery — working independently and in joint venture with established and new partners. A disciplined, design-led approach, grounded in commercial reality."
-
-  # The four service pillars. The short summary is used on the homepage
-  # services grid. The detail paragraphs appear on /what-we-do.
+  number: "02 — What we do"
+  heading: "End-to-end. From first site visit to last handover."
+  intro: "We work independently and in joint venture — acquiring sites, driving planning-led value creation, managing design, and seeing projects through to delivery."
   services:
     - id: development
       idx: "01"
       title: "Development + Contracting"
-      summary: "Origination, planning, and delivery of residential and mixed-use schemes, with a focus on well-located sites where active management can create value."
-      detail: "We take a hands-on approach across the full development lifecycle — from feasibility and planning through design development, procurement, construction oversight, and completion. Our combined track record covers over 5,000 homes delivered for leading residential developers in London and the Home Counties."
-
+      body: "Design, planning, and delivery of residential and mixed-use schemes — with a focus on well-located sites where active management creates lasting value. Our directors have delivered over 5,000 homes for leading developers, creating thriving new communities and places nationwide. It's what we do."
     - id: joint-ventures
       idx: "02"
       title: "Joint Ventures + Partnerships"
-      summary: "Structuring and delivering projects in partnership with landowners, investors, and local authorities through flexible JV and development management arrangements."
-      detail: "We partner with landowners, investors and developers to originate, structure, and deliver residential and mixed-use schemes. Our involvement typically spans the full development lifecycle, allowing us to maintain control of quality, programme, and commercial performance. We favour projects where close collaboration, clear alignment, and a disciplined approach can unlock the full potential of a site."
-      structures:
-        - "Joint ventures"
-        - "Development management agreements"
-        - "Equity partnerships"
-        - "Option and promotion arrangements"
-
+      body: "Delivering projects alongside landowners, investors, and local authorities through flexible JV and development management arrangements. We've structured partnerships across nine-figure equity programmes, from unlocking underused and overlooked sites to delivering complex, policy-led schemes for LAs and registered providers."
     - id: land
       idx: "03"
       title: "Land + Site Acquisition"
-      summary: "Targeting sites with planning potential, repositioning opportunities, or development upside — including off-market and partnership-led transactions."
-      detail: "Our acquisitions team has secured sites for 1,700+ homes with a combined GDV over £1.1bn. We move quickly and with conviction, backed by a clear commercial lens: does this deal stack, and what's the realistic path to value?"
-
+      body: "Targeting sites with planning potential, repositioning opportunities, or development upside — including off-market and partnership-led transactions. We're specialists in sensitive sites with complex planning histories. We know if a site's viable before anyone else has run the numbers."
     - id: investment
       idx: "04"
       title: "Investment + Asset Delivery"
-      summary: "Managing projects through the full lifecycle — from acquisition and planning to construction, completion, and exit or long-term hold."
-      detail: "We've collectively managed over £1bn of senior debt and raised £200m+ of equity for SME residential developers. Our directors advise institutional investors on the technical risks associated with developments, de-risking deals and ensuring every project stacks commercially."
-
-  # JV sub-specialisms shown on /what-we-do under Joint Ventures.
-  jvSubSpecialisms:
-    - label: "Office to residential"
-      title: "Unlocking obsolete commercial stock"
-      body: "We partner with family offices and long-term landowners to unlock underused offices and oversized high-street assets — leveraging permitted development rights and reuse to reduce risk and deliver high-quality residential or mixed-use schemes."
-    - label: "JV mixed-use development"
-      title: "Policy-led sites, unlocked together"
-      body: "We've delivered 12 JV schemes with Registered Providers and Local Authorities, helping unlock complex, policy-led sites they can't progress alone — and offering flexible returns (land, housing, or both) while keeping projects viable, fundable, and policy-aligned."
-    - label: "Downsizer-friendly living"
-      title: "Aspirational rightsizing for the over-55s"
-      body: "Many over-55s want to downsize but reject traditional retirement living, leaving them in oversized homes. We target this underserved, equity-rich segment with high-quality 'lock and leave' homes — aspirational rightsizing for independent, lifestyle-driven buyers."
-    - label: "Bespoke structures"
-      title: "Flexible to the opportunity"
-      body: "Every deal is different. We structure around the landowner's or investor's goals — whether that's maximising land value, retaining an ongoing stake, or minimising risk through phased delivery and clear governance."
+      body: "Managing projects through the full lifecycle — acquisition, planning, construction, completion, and exit or long-term hold. We've originated and managed £1bn in investment capital, and advised institutional investors on de-risking developments and ensuring deal stack."
 
 
-# -- APPROACH / CASE STUDY PAGE --------------------------------------
+# -- OUR APPROACH (case study) ---------------------------------------
+# Marketing agent's note: this section is intended as the permanent
+# home for case studies once Priory Park Gardens is announced.
+# It's live now; toggle `enabled: false` here to hide it pre-launch.
 approach:
-  seoTitle: "Our Approach — Priory Park Gardens, Hitchin — Metric + Maker"
-  seoDescription: "A case study of our approach in practice: Priory Park Gardens, Hitchin — a once-in-a-generation residential development in the historic grounds of Hitchin Priory."
-  header:
-    eyebrow: "Our approach, in practice"
-    title: "Priory Park Gardens, <em>Hitchin.</em>"
-    lead: "A once-in-a-generation residential development within the historic grounds of Hitchin Priory — delivered in joint venture with Myco."
-
-  facts:
-    - { number: "Hitchin",   label: "Herts — 2 mins from Hitchin town centre, 30 mins from London" }
-    - { number: "30 acres",  label: "Of landscaped parkland within the historic grounds of Hitchin Priory" }
-    - { number: "1–4 bed",   label: "Apartments and houses, design-led, site-sensitive" }
-    - { number: "JV",        label: "Delivered in joint venture with Myco" }
-
-  narrative:
-    - number: "Project narrative"
-      heading: "A site, a setting, and a scheme that had to rise to both."
-      paragraphs:
-        - "Priory Park Gardens takes a collection of former office buildings set within 30 acres of landscaped parkland — and reimagines them as a design-led residential scheme that respects and amplifies the site's history."
-        - "At just two minutes from Hitchin town centre and thirty minutes from London, the location balances the rhythm of a market town with the reach of the capital. The scheme is pitched at buyers who value setting, architectural quality, and generous outdoor space — and who are underserved by the standardised new-build market."
-    - number: "Our role"
-      heading: "From land deal to delivery oversight."
-      paragraphs:
-        - "Metric + Maker secured the land deal and is overseeing full development and delivery — from planning and design through to construction and sales. We set the commercial framework, chose the JV partner (Myco), and are hands-on through every stage."
-        - "Priory Park Gardens embodies our focus on creating homes and places that are commercially robust, carefully designed, and closely connected to their surroundings."
-
-  principlesHeading: "Three principles that run through every scheme."
-  principles:
-    - label: "01 Discipline"
-      title: "Every deal stacks."
-      body: "We build our underwriting from the ground up. If the numbers don't work — on planning, build cost, or exit — we don't force the deal. When we do commit, we commit with full conviction."
-    - label: "02 Design"
-      title: "Design is where value lives."
-      body: "We favour schemes where quality of design and setting is central to value — not bolted on after the spreadsheet. Good design pays for itself in planning, sales rate, and reputation."
-    - label: "03 Delivery"
-      title: "Hands-on, not hands-off."
-      body: "We stay close to the work. Our directors sit on site, in planning meetings, in design reviews. Partnership-led doesn't mean passive — it means aligned."
+  enabled: true
+  number: "03 — Our approach"
+  heading: "Metric + Maker developments are <em>robust, creative, and site-sensitive.</em> Here's what that looks like in practice."
+  caseStudy:
+    title: "Priory Park Gardens, Hitchin."
+    paragraphs:
+      - "A former Carmelite friary site that has been home to kitchen gardens, a hospital, an office campus — and now, 700 years on, one of Hertfordshire's most considered new residential addresses."
+      - "Set in 30 acres of parkland two minutes from Hitchin town centre, 30 minutes from London and 35 minutes from Cambridge, Priory Park Gardens shows what becomes possible when disciplined site selection, planning strategy and design work together from the start."
+      - "A complex, historically sensitive site that needed careful handling — and a JV structure that gave both partners the clarity to move decisively."
+    facts:
+      - { key: "Location", value: "Hitchin, Hertfordshire" }
+      - { key: "Setting",  value: "30 acres of mature parkland" }
+      - { key: "Tenure",   value: "1–4 bedroom apartments and houses" }
+      - { key: "Partner",  value: "JV with Myco" }
+      - { key: "Status",   value: "Pre-launch" }
+    ctaLabel: "Visit prioryparkgardens.com"
+    ctaHref: "https://prioryparkgardens.com"
 
 
-# -- PEOPLE PAGE ------------------------------------------------------
+# -- OPPORTUNITIES (new section) -------------------------------------
+opportunities:
+  number: "04 — Opportunities"
+  heading: "What we're looking for."
+  intro: "We're active buyers and partners. If you have a site, a scheme, or a conversation worth having, we want to hear from you."
+  criteria:
+    - "Residential and mixed-use development sites"
+    - "Land with planning potential — allocated, unallocated, or with a complex planning history"
+    - "Joint venture and partnership opportunities where a hands-on, design-led approach adds value"
+    - "Off-market transactions and early-stage conversations"
+    - "Schemes where quality, setting, and long-term placemaking matter"
+    - "Affordable housing delivery and local authority partnerships"
+
+
+# -- OUR PEOPLE ------------------------------------------------------
 people:
-  seoTitle: "People — Metric + Maker"
-  seoDescription: "Meet the four founding directors of Metric + Maker — a tight-knit, commercially minded team of experts and innovators with a combined 60+ years in residential development."
-  header:
-    eyebrow: "Our people"
-    title: "Four founders. <em>One tight-knit team.</em>"
-    lead: "Our directors are experts and innovators with a background in delivering for leading developers, private investors, and JV partnerships — and a passion for creating places where people and communities can thrive."
+  number: "05 — Our people"
+  heading: "Four founders. One tight-knit, commercially minded team."
+  intro: "Experts and innovators with a background in delivering for leading developers, private investors, and JV partnerships. We founded Metric + Maker to stay close to the work, and to create places where people and communities can thrive."
 
-# The four directors. Used on /people for full bios and on the homepage
-# for the short version (shortBio only).
+# Each director's bio appears under their portrait.
 directors:
   - name: "Bradley Goding"
     role: "Partnerships + Land Acquisition"
     email: "brad@metricandmaker.com"
-    shortBio: "18+ years in real estate. Secured sites for 1,700+ homes with a combined GDV over £1.1bn. Entrepreneurial leader and people-first operator."
-    quote: "Brad left a corporate role to launch Metric + Maker — backing belief over certainty."
-    bio:
-      - "A real estate professional with 18+ years of experience specialising in land acquisitions, securing sites for 1,700+ homes with a combined GDV of £1.1bn+."
-      - "As an entrepreneurial leader and people-first operator, he brings energy, optimism, and big-picture thinking to every partnership."
-      - "Brad holds a BSc (Hons) in Construction Management. Married with two children."
+    bio: "Brad leads site sourcing, landowner relationships, and partnership structuring. He's spent 18+ years identifying and securing development opportunities — including sites for over 1,700 homes with a combined GDV exceeding £1.1bn. An entrepreneurial leader and people-first operator, Brad brings energy, optimism, and big-picture thinking to every partnership."
 
   - name: "Matthew Tucker"
     role: "Investments + New Business"
     email: "matt@metricandmaker.com"
-    shortBio: "Previously led teams at JLL and WSP. 15+ years supporting £700m+ of development finance. Detail is his default — every deal stacks."
-    quote: "Detail is his default. He de-risks, and he makes sure every deal stacks."
-    bio:
-      - "An investment specialist well-versed in advising institutional investors on the technical risks associated with developments."
-      - "Matt previously led teams at market leader JLL and global consultancy WSP. With 15+ years of industry experience, he has supported £700m+ of development finance in the SME residential market."
-      - "Matt holds an MSc in Surveying and is a member of the Chartered Institute of Building (MCIOB)."
+    bio: "Matt leads investment strategy, development finance, and new business. Previously at JLL and WSP, he's spent 15+ years supporting £700m+ of investment across residential and mixed-use schemes. Every deal he works on is modelled, stress-tested, and modelled again. Detail is Matt's default — he de-risks, and makes sure every deal stacks."
 
   - name: "James Hutchins"
     role: "Commercial Operations"
     email: "james@metricandmaker.com"
-    shortBio: "15+ years in mixed-use residential development. Delivered 1,700+ homes at a combined build cost of £555m+. Cost control, quality, programme."
-    quote: "Cost control, quality, programme — and innovative solutions to complex challenges."
-    bio:
-      - "With 15+ years of experience in mixed-use residential development, James has delivered more than 1,700 homes with a total build cost of £555m+."
-      - "He's a results-driven professional with expertise in cost control, quality, and programme management, known for finding innovative solutions to complex challenges."
-      - "James holds a BSc (Hons) in Commercial Management. Happily married, with a bossy little dachshund named Spencer."
+    bio: "James leads commercial operations, cost management, and delivery. With 15+ years in mixed-use residential development, he has delivered over 1,700 homes at a combined build cost exceeding £555m. James keeps projects on programme, on budget, and on brief — and has a reputation for finding innovative solutions to complex challenges."
 
   - name: "Sam Roberts"
     role: "Design + Planning"
     email: "sam@metricandmaker.com"
-    shortBio: "15+ years in mixed-use residential. Delivered 1,750+ homes at £650m+ build cost. Turns big ideas into things that actually get built."
-    quote: "Sam's superpower is turning big ideas into things that actually get built."
-    bio:
-      - "15+ years of experience in mixed-use residential development. Sam has delivered 1,750+ homes at a total build cost of £650m+."
-      - "Creative but grounded — he knows how to push boundaries without blowing the budget."
-      - "Sam holds a BA (Hons) in Architecture. At home, he's outnumbered: his wife and two young daughters keep him on his toes."
+    bio: "Sam leads design strategy and planning. 15+ years in mixed-use residential, with 1,750+ homes delivered at a combined build cost of £650m+. He works across architecture, landscape, and planning from the earliest stages. Sam turns big, creative ideas into things that actually get built — driving exceptional outcomes while keeping a tight rein on budgets."
 
 
-# -- PARTNERS PAGE ----------------------------------------------------
+# -- NETWORK & PARTNERS ---------------------------------------------
 partners:
-  seoTitle: "Partners & Network — Metric + Maker"
-  seoDescription: "A trusted network of architects, planners, designers, and contractors we've delivered with time and again over the last two decades."
-  header:
-    eyebrow: "Network & partners"
-    title: "A trusted network of architects, planners, designers, <em>and contractors.</em>"
-    lead: "Our network is a deep bench of industry-leading organisations we've delivered with time and again over the last two decades — letting us work with speed, trust and transparency while staying close to every detail."
-  closingNote: "This is a curated snapshot — we work with a wider bench of specialists brought in to match the needs of each scheme. For a particular introduction, or to be considered for our wider network, please get in touch."
+  number: "06 — Network & partners"
+  heading: "Built on long-term partnerships."
+  intro: "We work with a trusted network of architects, planners, designers, and contractors — people we've planned with, built with, and problem-solved with over the last two decades."
   items:
     - img: "/assets/myco_logo.webp"
       alt: "Myco"
       name: "Myco"
-      role: "Joint-venture development partner"
-      blurb: "Our JV partner on Priory Park Gardens, Hitchin. A design-led developer with a track record of site-sensitive residential schemes."
+      role: "Contracting partner"
+      blurb: "Delivering innovative projects while championing safety, sustainability, and meaningful engagement with local communities."
+
     - img: "/assets/HTA.webp"
-      alt: "HTA"
-      name: "HTA"
-      role: "Architecture & urban design"
-      blurb: "One of the UK's leading residential architects and masterplanners. We've delivered with HTA across multiple joint-venture and policy-led schemes."
+      alt: "HTA Design"
+      name: "HTA Design"
+      role: "Landscape partners"
+      blurb: "One of the UK's leading design practices, the name behind 40,000+ homes and some of the country's best green spaces."
+
     - img: "/assets/youth.webp"
       alt: "Youth"
       name: "Youth"
-      role: "Branding & creative"
-      blurb: "The studio behind the Metric + Maker brand — and creative partners we turn to for scheme identity, wayfinding, and launch collateral."
+      role: "Interior designers"
+      blurb: "Boutique practice known for its naturalistic and 'refined raw' aesthetic, and creating highly intentional residential spaces."
+
     - img: null
-      textLogo: "C O P P E R C O A S T"
-      name: "Coppercoast"
-      role: "Interior design"
-      blurb: "Residential interior design partner — responsible for the considered material palettes and lifestyle-led specifications on our schemes."
+      textLogo: "C O P P E R   C O A S T"
+      name: "Copper Coast"
+      role: "Creative partners"
+      blurb: "Design agency behind the visual identity and creative collateral for Metric + Maker and its developments."
 
 
-# -- CONTACT PAGE -----------------------------------------------------
-contact:
-  seoTitle: "Contact — Metric + Maker"
-  seoDescription: "Get in touch with Metric + Maker. We welcome conversations with landowners, investors, and partners at all stages."
-  header:
-    eyebrow: "Let's work together"
-    title: "Got a site, a scheme, or a <em>conversation worth having?</em>"
-    lead: "We welcome conversations with landowners, investors, and partners at all stages, and are comfortable working across a range of structures."
-
-  currentFocusHeading: "Our current focus"
-  currentFocus:
-    - "Residential and mixed-use development sites"
-    - "Land with planning potential"
-    - "Partnership and joint venture opportunities"
-    - "Schemes where design and setting are central to value"
-    - "Projects where a hands-on, partner-led approach is preferred"
-
-  structuresHeading: "How we work with partners"
-  structures:
-    - "Joint ventures"
-    - "Development management agreements"
-    - "Equity partnerships"
-    - "Option and promotion arrangements"
-
-  responseHeading: "Speed of response"
-  responseBody: "We try to respond to all serious enquiries within two working days. For land and partnership enquiries, the quickest route is direct to Brad; for investment and new-business conversations, direct to Matt."
-
-  generalEmail: "hello@metricandmaker.com"
-
-
-# -- CONTACT CTA BLOCK ------------------------------------------------
-# The "Let's work together" strip that appears at the bottom of most
-# pages. Each page can override the heading below.
+# -- CONTACT / CTA ---------------------------------------------------
 contactCta:
-  eyebrow: "Let's work together"
-  defaultHeading: "Got a site, a scheme, or a <em>conversation worth&nbsp;having?</em>"
-  body: "We welcome conversations with landowners, investors, and partners at all stages. Current focus: residential and mixed-use sites, land with planning potential, and joint-venture opportunities where design and setting are central to value."
-  primaryCtaLabel: "Get in touch"
-  secondaryCtaLabel: "More ways to reach us"
-  # Per-page heading overrides (keyed by page path).
-  headings:
-    whatWeDo:  "Want to talk about a <em>specific scheme or site?</em>"
-    approach:  "Have a site that needs <em>this kind of treatment?</em>"
-    people:    "Prefer to go <em>direct to a director?</em>"
-    partners:  "Part of the residential supply chain? <em>We'd like to hear from you.</em>"
+  number: "07 — Contact"
+  heading: "Interested in working with us? <em>Let's talk.</em>"
+  body: "We welcome introductions from landowners, investors, and public sector partners at all stages — whether you have an initial idea worth exploring or a site ready to move on."
+  contactLines:
+    - { label: "Partnerships & land",     email: "brad@metricandmaker.com" }
+    - { label: "Investments & finance",   email: "matt@metricandmaker.com" }
+    - { label: "General enquiries",       email: "hello@metricandmaker.com" }
+  ctaLabel: "Get in touch"
+  ctaHref: "mailto:hello@metricandmaker.com"

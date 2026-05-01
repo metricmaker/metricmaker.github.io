@@ -17,60 +17,85 @@ export interface NavLink {
   href: string;
 }
 
+export interface NavConfig {
+  links: NavLink[];
+  cta: NavLink;
+}
+
+export interface Hero {
+  headline: string;
+  subheading: string;
+  body: string;
+  ctaPrimary: string;
+  ctaSecondary: string;
+}
+
 export interface StatItem {
   number: string;
   suffix?: string;
   label: string;
+  sub?: string;
 }
 
 export interface StatsBlock {
-  eyebrow: string;
+  number: string;
   heading: string;
   intro: string;
-  items?: StatItem[];
-}
-
-export interface FactItem {
-  key?: string;
-  value?: string;
-  number?: string;
-  label?: string;
+  items: StatItem[];
 }
 
 export interface Service {
   id: string;
   idx: string;
   title: string;
-  summary: string;
-  detail?: string;
-  structures?: string[];
-}
-
-export interface JvSubSpecialism {
-  label: string;
-  title: string;
   body: string;
 }
 
-export interface NarrativeBlock {
+export interface WhatWeDo {
   number: string;
   heading: string;
-  paragraphs: string[];
+  intro: string;
+  services: Service[];
 }
 
-export interface Principle {
-  label: string;
+export interface FactItem {
+  key: string;
+  value: string;
+}
+
+export interface CaseStudy {
   title: string;
-  body: string;
+  paragraphs: string[];
+  facts: FactItem[];
+  ctaLabel: string;
+  ctaHref: string;
+}
+
+export interface ApproachSection {
+  enabled: boolean;
+  number: string;
+  heading: string;
+  caseStudy: CaseStudy;
+}
+
+export interface Opportunities {
+  number: string;
+  heading: string;
+  intro: string;
+  criteria: string[];
+}
+
+export interface PeopleSection {
+  number: string;
+  heading: string;
+  intro: string;
 }
 
 export interface Director {
   name: string;
   role: string;
   email: string;
-  shortBio: string;
-  quote: string;
-  bio: string[];
+  bio: string;
 }
 
 export interface PartnerItem {
@@ -82,10 +107,25 @@ export interface PartnerItem {
   blurb: string;
 }
 
-export interface PageHeaderCopy {
-  eyebrow: string;
-  title: string;
-  lead?: string;
+export interface PartnersSection {
+  number: string;
+  heading: string;
+  intro: string;
+  items: PartnerItem[];
+}
+
+export interface ContactLine {
+  label: string;
+  email: string;
+}
+
+export interface ContactCta {
+  number: string;
+  heading: string;
+  body: string;
+  contactLines: ContactLine[];
+  ctaLabel: string;
+  ctaHref: string;
 }
 
 export interface SiteContent {
@@ -94,82 +134,16 @@ export interface SiteContent {
     description: string;
     footerCopyright: string;
   };
-  nav: {
-    ctaLabel: string;
-    links: NavLink[];
-  };
-  home: {
-    hero: {
-      eyebrow: string;
-      headline: string;
-      lead: string;
-      ctaPrimary: string;
-      ctaSecondary: string;
-      meta: string;
-    };
-    servicesSection: { number: string; heading: string; intro: string };
-    featureProject: {
-      eyebrow: string;
-      title: string;
-      subtitle: string;
-      body: string;
-      ctaLabel: string;
-      facts: FactItem[];
-    };
-    peopleSection: { number: string; heading: string; intro: string };
-    partnersSection: { number: string; heading: string; intro: string };
-  };
+  nav: NavConfig;
+  hero: Hero;
   stats: StatsBlock;
-  statsPeopleVariant: StatsBlock;
-  whatWeDo: {
-    seoTitle: string;
-    seoDescription: string;
-    header: PageHeaderCopy;
-    services: Service[];
-    jvSubSpecialisms: JvSubSpecialism[];
-  };
-  approach: {
-    seoTitle: string;
-    seoDescription: string;
-    header: PageHeaderCopy;
-    facts: FactItem[];
-    narrative: NarrativeBlock[];
-    principlesHeading: string;
-    principles: Principle[];
-  };
-  people: {
-    seoTitle: string;
-    seoDescription: string;
-    header: PageHeaderCopy;
-  };
+  whatWeDo: WhatWeDo;
+  approach: ApproachSection;
+  opportunities: Opportunities;
+  people: PeopleSection;
   directors: Director[];
-  partners: {
-    seoTitle: string;
-    seoDescription: string;
-    header: PageHeaderCopy;
-    closingNote: string;
-    items: PartnerItem[];
-  };
-  contact: {
-    seoTitle: string;
-    seoDescription: string;
-    header: PageHeaderCopy;
-    currentFocusHeading: string;
-    currentFocus: string[];
-    structuresHeading: string;
-    structures: string[];
-    responseHeading: string;
-    responseBody: string;
-    generalEmail: string;
-  };
-  contactCta: {
-    eyebrow: string;
-    defaultHeading: string;
-    body: string;
-    primaryCtaLabel: string;
-    secondaryCtaLabel: string;
-    headings: Record<string, string>;
-  };
+  partners: PartnersSection;
+  contactCta: ContactCta;
 }
 
 // ---- Parse and export ----------------------------------------------

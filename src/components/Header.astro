@@ -1,33 +1,18 @@
 ---
 import { content } from '../content';
-
-interface Props {
-  currentPath?: string;
-}
-const { currentPath = '/' } = Astro.props;
-
 const { nav } = content;
-
-function isActive(href: string) {
-  if (href === '/') return currentPath === '/';
-  return currentPath.startsWith(href);
-}
 ---
 
 <header class="site">
   <div class="wrap bar">
-    <a href="/" class="brand" aria-label="Metric + Maker — home">
+    <a href="#top" class="brand" aria-label="Metric + Maker — home">
       <img src="/assets/logo-navy.svg" alt="Metric + Maker" />
     </a>
     <nav class="primary" aria-label="Primary">
-      {
-        nav.links.map((l) => (
-          <a href={l.href} class:list={[{ active: isActive(l.href) }]}>
-            {l.label}
-          </a>
-        ))
-      }
-      <a href="/contact" class="nav-cta">{nav.ctaLabel} <span class="arr">→</span></a>
+      {nav.links.map((l) => <a href={l.href}>{l.label}</a>)}
+      <a href={nav.cta.href} class="nav-cta">
+        {nav.cta.label} <span class="arr">→</span>
+      </a>
     </nav>
     <button class="menu-toggle" aria-label="Open menu">☰</button>
   </div>

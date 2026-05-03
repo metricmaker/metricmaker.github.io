@@ -18,6 +18,98 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+/* ====================================================================
+   Scroll & load animations
+   --------------------------------------------------------------------
+   The `.js-anim` class on <html> is added by an inline script in <head>
+   before paint, so users never see a flash of content. Without JS, all
+   elements stay visible (no hidden states applied).
+==================================================================== */
+
+/* Fade-up: triggered when an element enters the viewport */
+.js-anim .fade-up {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.9s ease,
+              transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+  will-change: opacity, transform;
+}
+.js-anim .fade-up.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger: when the parent enters view, its direct children fade-up
+   in sequence (1, 2, 3...). Used on grid containers. */
+.js-anim .stagger > * {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.9s ease,
+              transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+  will-change: opacity, transform;
+}
+.js-anim .stagger.visible > * { opacity: 1; transform: none; }
+.js-anim .stagger.visible > *:nth-child(1) { transition-delay: 0s; }
+.js-anim .stagger.visible > *:nth-child(2) { transition-delay: 0.10s; }
+.js-anim .stagger.visible > *:nth-child(3) { transition-delay: 0.20s; }
+.js-anim .stagger.visible > *:nth-child(4) { transition-delay: 0.30s; }
+.js-anim .stagger.visible > *:nth-child(5) { transition-delay: 0.40s; }
+.js-anim .stagger.visible > *:nth-child(6) { transition-delay: 0.50s; }
+.js-anim .stagger.visible > *:nth-child(7) { transition-delay: 0.60s; }
+.js-anim .stagger.visible > *:nth-child(8) { transition-delay: 0.70s; }
+
+/* Hero text: animates on initial page load (no scroll needed) */
+.js-anim .hero-anim {
+  opacity: 0;
+  transform: translateY(28px);
+  animation: hero-rise 1.05s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+.js-anim .hero-anim.d1 { animation-delay: 0.30s; }
+.js-anim .hero-anim.d2 { animation-delay: 0.55s; }
+.js-anim .hero-anim.d3 { animation-delay: 0.80s; }
+.js-anim .hero-anim.d4 { animation-delay: 1.05s; }
+@keyframes hero-rise {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Parallax brand mark sitting behind a section. The actual translate
+   is set by JS based on scroll position; CSS just places it. */
+.parallax-section {
+  position: relative;
+  overflow: hidden;
+}
+.parallax-section .wrap { position: relative; z-index: 1; }
+.parallax-mark {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: clamp(420px, 75vw, 1000px);
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  opacity: 0.07;
+  transform: translate3d(-50%, -50%, 0);
+  transition: opacity 0.4s ease;
+}
+.parallax-mark.gold-tint { opacity: 0.10; }
+@media (max-width: 720px) { .parallax-mark { width: 90vw; opacity: 0.05; } }
+
+/* Honour user preference: turn everything off */
+@media (prefers-reduced-motion: reduce) {
+  .js-anim .fade-up,
+  .js-anim .stagger > *,
+  .js-anim .hero-anim {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+  .parallax-mark { transform: translate3d(-50%, -50%, 0) !important; }
+  html { scroll-behavior: auto; }
+}
+
 body {
   margin: 0;
   font-family: var(--sans);

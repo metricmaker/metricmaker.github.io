@@ -36,15 +36,15 @@ const {
     <div class="hero-overlay" aria-hidden="true"></div>
     <div class="wrap hero-inner">
       <div>
-        <h1 set:html={hero.headline} />
+        <h1 class="hero-anim d1" set:html={hero.headline} />
         <p
-          class="lead"
+          class="lead hero-anim d2"
           style="margin-top:32px;font-family:var(--serif);font-style:italic;color:var(--gold-soft);font-size:clamp(20px,1.8vw,28px);max-width:48ch;"
         >
           {hero.subheading}
         </p>
-        <p class="lead">{hero.body}</p>
-        <div class="actions">
+        <p class="lead hero-anim d3">{hero.body}</p>
+        <div class="actions hero-anim d4">
           <a href="#contact" class="btn btn-primary">
             {hero.ctaPrimary} <span class="btn-arrow">→</span>
           </a>
@@ -64,7 +64,7 @@ const {
   <!-- ========== WHAT WE DO ========== -->
   <section class="band cream" id="what-we-do">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head fade-up">
         <div><span class="num">{whatWeDo.number}</span></div>
         <div>
           <h2 style="margin-top:12px;">{whatWeDo.heading}</h2>
@@ -72,7 +72,7 @@ const {
         </div>
       </div>
 
-      <div class="services-grid">
+      <div class="services-grid stagger">
         {
           whatWeDo.services.map((s) => (
             <article class="service">
@@ -94,14 +94,14 @@ const {
     approach.enabled && (
       <section class="band stone" id="approach">
         <div class="wrap">
-          <div class="section-head">
+          <div class="section-head fade-up">
             <div><span class="num">{approach.number}</span></div>
             <div>
               <h2 set:html={approach.heading} />
             </div>
           </div>
 
-          <div class="case-study-grid">
+          <div class="case-study-grid stagger">
             <div
               class="case-study-image"
               style="background-image:url('/assets/Hitchin sketch 1.jpg');"
@@ -139,9 +139,16 @@ const {
   }
 
   <!-- ========== OPPORTUNITIES ========== -->
-  <section class="band cream" id="opportunities">
+  <section class="band cream parallax-section" id="opportunities">
+    <img
+      src="/assets/mark-transparent.svg"
+      alt=""
+      class="parallax-mark"
+      data-parallax-direction="up"
+      aria-hidden="true"
+    />
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head fade-up">
         <div><span class="num">{opportunities.number}</span></div>
         <div>
           <h2 style="margin-top:12px;">{opportunities.heading}</h2>
@@ -149,7 +156,7 @@ const {
         </div>
       </div>
 
-      <div class="opportunities-grid">
+      <div class="opportunities-grid stagger">
         {
           opportunities.criteria.map((c) => (
             <div class="opportunity">
@@ -163,9 +170,16 @@ const {
   </section>
 
   <!-- ========== OUR PEOPLE ========== -->
-  <section class="band stone" id="people">
+  <section class="band stone parallax-section" id="people">
+    <img
+      src="/assets/mark-transparent.svg"
+      alt=""
+      class="parallax-mark gold-tint"
+      data-parallax-direction="down"
+      aria-hidden="true"
+    />
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head fade-up">
         <div><span class="num">{people.number}</span></div>
         <div>
           <h2 style="margin-top:12px;">{people.heading}</h2>
@@ -173,7 +187,7 @@ const {
         </div>
       </div>
 
-      <div class="people-grid">
+      <div class="people-grid stagger">
         {
           directors.map((d) => (
             <article class="person">
@@ -192,7 +206,7 @@ const {
   <!-- ========== NETWORK & PARTNERS ========== -->
   <section class="band cream" id="partners">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head fade-up">
         <div><span class="num">{partners.number}</span></div>
         <div>
           <h2 style="margin-top:12px;">{partners.heading}</h2>
@@ -200,7 +214,7 @@ const {
         </div>
       </div>
 
-      <div class="partners-detail">
+      <div class="partners-detail stagger">
         {
           partners.items.map((p) => (
             <article class="partner-card">

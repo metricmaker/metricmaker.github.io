@@ -634,7 +634,10 @@ section.feature { background: var(--navy); color: var(--paper); padding: 0; over
 .people-grid .person h3 { font-size: clamp(20px, 1.8vw, 24px); margin-top: 2px; }
 .people-grid .person .bio { font-size: 14.5px; color: var(--ink-mute); line-height: 1.55; }
 .people-grid .person a.linkedin {
-  margin-top: 4px;
+  /* margin-top: auto pulls the icon to the bottom of the flex column.
+     Because the grid forces all four cards to equal height, the icons
+     end up aligned on a single horizontal plane across the row. */
+  margin-top: auto;
   display: inline-flex;
   align-items: center;
   justify-content: center;

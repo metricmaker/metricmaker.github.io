@@ -188,6 +188,30 @@ partners:
       role: "Development management"
       blurb: "Urban development project management partner."
 
+    - img: "/assets/wsp.png"
+      alt: "WSP"
+      name: "WSP"
+      role: "Engineering consultancy"
+      blurb: "Global engineering professional services firm."
+
+    - img: "/assets/mason-navarro.jpg"
+      alt: "Mason Navarro Pledge"
+      name: "Mason Navarro Pledge"
+      role: "Structural engineering"
+      blurb: "Specialist structural and civil engineering practice."
+
+    - img: "/assets/rba-acoustics.png"
+      alt: "RBA Acoustics"
+      name: "RBA Acoustics"
+      role: "Acoustic consultancy"
+      blurb: "Acoustic engineering and consultancy."
+
+    - img: "/assets/cooper-homewood.jpg"
+      alt: "Cooper Homewood"
+      name: "Cooper Homewood"
+      role: "Building services"
+      blurb: "Building services and MEP consultancy."
+
 
 # -- CONTACT / CTA ---------------------------------------------------
 contactCta:

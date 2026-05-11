@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import StatsBand from '../components/StatsBand.astro';
+import PartnersReel from '../components/PartnersReel.astro';
 import ContactCTA from '../components/ContactCTA.astro';
 import { content } from '../content';
 
@@ -28,7 +29,6 @@ const {
       loop
       playsinline
       preload="auto"
-      poster="/assets/Hitchin sketch 1.jpg"
       aria-hidden="true"
     >
       <source src="/assets/Hitchin.mp4" type="video/mp4" />
@@ -141,7 +141,7 @@ const {
   <!-- ========== OPPORTUNITIES ========== -->
   <section class="band cream parallax-section" id="opportunities">
     <img
-      src="/assets/mark-transparent.svg"
+      src="/assets/mark-light-gold.svg"
       alt=""
       class="parallax-mark"
       data-parallax-direction="up"
@@ -172,9 +172,9 @@ const {
   <!-- ========== OUR PEOPLE ========== -->
   <section class="band stone parallax-section" id="people">
     <img
-      src="/assets/mark-transparent.svg"
+      src="/assets/mark-light-gold.svg"
       alt=""
-      class="parallax-mark gold-tint"
+      class="parallax-mark subtle"
       data-parallax-direction="down"
       aria-hidden="true"
     />
@@ -214,23 +214,8 @@ const {
         </div>
       </div>
 
-      <div class="partners-detail stagger">
-        {
-          partners.items.map((p) => (
-            <article class="partner-card">
-              <div class="logo">
-                {p.img ? (
-                  <img src={p.img} alt={p.alt ?? p.name} />
-                ) : (
-                  <span class="text">{p.textLogo}</span>
-                )}
-              </div>
-              <h3>{p.name}</h3>
-              <div class="eyebrow" style="color:var(--gold);">{p.role}</div>
-              <p>{p.blurb}</p>
-            </article>
-          ))
-        }
+      <div class="fade-up">
+        <PartnersReel />
       </div>
     </div>
   </section>

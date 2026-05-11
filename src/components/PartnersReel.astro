@@ -1,43 +1,27 @@
 ---
 /*
  * Horizontal scrolling partners reel. Duplicated set for seamless loop —
- * the animation translates -50%, so the second half re-enters from the right
- * just as the first half exits left.
+ * the animation translates -50%, so the second half re-enters from the
+ * right just as the first half exits left.
  */
+import { content } from '../content';
 
-const partners = [
-  { img: '/assets/myco_logo.webp', alt: 'Myco' },
-  { img: '/assets/HTA.webp', alt: 'HTA' },
-  { img: '/assets/youth.webp', alt: 'Youth' },
-  { text: 'C O P P E R C O A S T' },
-];
-
-// Repeat twice for the marquee loop, then duplicate the whole thing for continuity
-const pattern = [...partners, ...partners];
+// Build a single pass from the YAML, then double it for seamless looping.
+const pass = content.partners.items;
+const doubled = [...pass, ...pass];
 ---
 
 <div class="reel" aria-label="Partner organisations">
   <div class="reel-track">
     {
-      pattern.map((p) =>
+      doubled.map((p, i) =>
         p.img ? (
-          <div class="reel-item">
-            <img src={p.img} alt={p.alt} />
+          <div class="reel-item" aria-hidden={i >= pass.length ? 'true' : undefined}>
+            <img src={p.img} alt={i >= pass.length ? '' : (p.alt ?? p.name)} />
           </div>
         ) : (
-          <div class="reel-item text">{p.text}</div>
-        ),
-      )
-    }
-    {
-      pattern.map((p) =>
-        p.img ? (
-          <div class="reel-item" aria-hidden="true">
-            <img src={p.img} alt="" />
-          </div>
-        ) : (
-          <div class="reel-item text" aria-hidden="true">
-            {p.text}
+          <div class="reel-item text" aria-hidden={i >= pass.length ? 'true' : undefined}>
+            {p.textLogo}
           </div>
         ),
       )

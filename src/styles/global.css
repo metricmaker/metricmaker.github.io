@@ -89,12 +89,12 @@ html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
   pointer-events: none;
   user-select: none;
   z-index: 0;
-  opacity: 0.07;
+  opacity: 0.22;
   transform: translate3d(-50%, -50%, 0);
   transition: opacity 0.4s ease;
 }
-.parallax-mark.gold-tint { opacity: 0.10; }
-@media (max-width: 720px) { .parallax-mark { width: 90vw; opacity: 0.05; } }
+.parallax-mark.subtle { opacity: 0.08; }
+@media (max-width: 720px) { .parallax-mark { width: 90vw; opacity: 0.16; } }
 
 /* Honour user preference: turn everything off */
 @media (prefers-reduced-motion: reduce) {
@@ -316,7 +316,7 @@ section.hero {
 @media (prefers-reduced-motion: reduce) {
   .hero-video { display: none; }
   .hero-scroll .line { animation: none; }
-  section.hero { background: url('/assets/Hitchin%20sketch%201.jpg') center/cover no-repeat, var(--navy); }
+  section.hero { background: var(--navy); }
 }
 
 /* --- Page Header (interior pages) --- */
@@ -578,9 +578,11 @@ section.feature { background: var(--navy); color: var(--paper); padding: 0; over
 }
 .case-study-image {
   aspect-ratio: 4/3;
-  background-size: cover;
-  background-position: center;
-  background-color: #0A2A44;
+  /* Slightly oversize + center to crop the watercolour's natural white edges */
+  background-size: 122%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #EBE5D6;
 }
 .case-study-copy h3 {
   font-size: clamp(28px, 3vw, 40px);

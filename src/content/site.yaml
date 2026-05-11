@@ -25,11 +25,10 @@ site:
 
 # -- Top navigation ---------------------------------------------------
 # The site is single-page; nav links jump to anchored sections.
-# Add { label: "Approach", href: "#approach" } here once Priory Park
-# Gardens is publicly announced (it's already on the page below).
 nav:
   links:
     - { label: "What we do",    href: "#what-we-do" }
+    - { label: "Approach",      href: "#approach" }
     - { label: "Opportunities", href: "#opportunities" }
     - { label: "People",        href: "#people" }
     - { label: "Partners",      href: "#partners" }
@@ -41,7 +40,7 @@ nav:
 # -- HERO ------------------------------------------------------------
 hero:
   headline: "Ambitious, <em>partnership-driven</em> property development."
-  subheading: "Carefully selected sites, creative design, and disciplined delivery."
+  subheading: "Carefully selected sites, creative design, disciplined delivery."
   body: "We partner with landowners, investors, and local authorities to create exceptional homes and places that people can be proud of."
   ctaPrimary: "Start a conversation"
   ctaSecondary: "What we do"
@@ -59,12 +58,13 @@ stats:
       sub: "Across private-for-sale and affordable tenure"
     - number: "£1bn"
       suffix: "+"
-      label: "debt"
-      sub: "Senior investment capital originated and managed"
-    - number: "£200m"
+      label: "capital"
+      sub: "Investment capital originated and managed"
+    # Build cost / GDV stat — placeholder figure; refine per Sam's email
+    - number: "£1bn"
       suffix: "+"
-      label: "equity"
-      sub: "Raised for award-winning residential schemes"
+      label: "GDV"
+      sub: "Build cost / GDV delivered to date"
     - number: "60"
       suffix: "+"
       label: "yrs combined"
@@ -80,19 +80,19 @@ whatWeDo:
     - id: development
       idx: "01"
       title: "Development + Contracting"
-      body: "Design, planning, and delivery of residential and mixed-use schemes — with a focus on well-located sites where active management creates lasting value. Our directors have delivered over 5,000 homes for leading developers, creating thriving new communities and places nationwide. It's what we do."
+      body: "Design, planning, and delivery of residential and mixed-use schemes — with a focus on well-located sites where active management creates lasting value."
     - id: joint-ventures
       idx: "02"
       title: "Joint Ventures + Partnerships"
-      body: "Delivering projects alongside landowners, investors, and local authorities through flexible JV and development management arrangements. We've structured partnerships across nine-figure equity programmes, from unlocking underused and overlooked sites to delivering complex, policy-led schemes for LAs and registered providers."
+      body: "Working with landowners, investors, and LAs in flexible JV and development management arrangements — unlocking overlooked sites and delivering complex, policy-led schemes."
     - id: land
       idx: "03"
       title: "Land + Site Acquisition"
-      body: "Targeting sites with planning potential, repositioning opportunities, or development upside — including off-market and partnership-led transactions. We're specialists in sensitive sites with complex planning histories. We know if a site's viable before anyone else has run the numbers."
+      body: "Targeting sites with planning potential, repositioning opportunities, or development upside — with a specialism in sensitive sites with complex planning histories."
     - id: investment
       idx: "04"
       title: "Investment + Asset Delivery"
-      body: "Managing projects through the full lifecycle — acquisition, planning, construction, completion, and exit or long-term hold. We've originated and managed £1bn in investment capital, and advised institutional investors on de-risking developments and ensuring deal stack."
+      body: "Managing projects through acquisition, planning, construction, and exit or long-term hold — with deep experience originating and advising on institutional development capital."
 
 
 # -- OUR APPROACH (case study) ---------------------------------------
@@ -107,7 +107,7 @@ approach:
     title: "Priory Park Gardens, Hitchin."
     paragraphs:
       - "A former Carmelite friary site that has been home to kitchen gardens, a hospital, an office campus — and now, 700 years on, one of Hertfordshire's most considered new residential addresses."
-      - "Set in 30 acres of parkland two minutes from Hitchin town centre, 30 minutes from London and 35 minutes from Cambridge, Priory Park Gardens shows what becomes possible when disciplined site selection, planning strategy and design work together from the start."
+      - "Set in 30 acres of parkland two minutes from Hitchin town centre, 30 minutes from London and 35 minutes from Cambridge."
       - "A complex, historically sensitive site that needed careful handling — and a JV structure that gave both partners the clarity to move decisively."
     facts:
       - { key: "Location", value: "Hitchin, Hertfordshire" }
@@ -144,22 +144,22 @@ directors:
   - name: "Bradley Goding"
     role: "Partnerships + Land Acquisition"
     email: "brad@metricandmaker.com"
-    bio: "Brad leads site sourcing, landowner relationships, and partnership structuring. He's spent 18+ years identifying and securing development opportunities — including sites for over 1,700 homes with a combined GDV exceeding £1.1bn. An entrepreneurial leader and people-first operator, Brad brings energy, optimism, and big-picture thinking to every partnership."
+    bio: "Brad leads site sourcing, landowner relationships, and partnership structuring — with 18+ years identifying and securing development opportunities across sites totalling over 1,700 homes and £1.1bn GDV. An entrepreneurial, people-first operator, he brings energy and big-picture thinking to every partnership."
 
   - name: "Matthew Tucker"
     role: "Investments + New Business"
     email: "matt@metricandmaker.com"
-    bio: "Matt leads investment strategy, development finance, and new business. Previously at JLL and WSP, he's spent 15+ years supporting £700m+ of investment across residential and mixed-use schemes. Every deal he works on is modelled, stress-tested, and modelled again. Detail is Matt's default — he de-risks, and makes sure every deal stacks."
+    bio: "Matt leads investment strategy, development finance, and new business. With 15+ years with JLL and WSP, and £700m+ of investment experience across residential and mixed-use schemes, he models, stress-tests, and models again — de-risking every deal and making sure it stacks."
 
   - name: "James Hutchins"
     role: "Commercial Operations"
     email: "james@metricandmaker.com"
-    bio: "James leads commercial operations, cost management, and delivery. With 15+ years in mixed-use residential development, he has delivered over 1,700 homes at a combined build cost exceeding £555m. James keeps projects on programme, on budget, and on brief — and has a reputation for finding innovative solutions to complex challenges."
+    bio: "James leads commercial operations, cost management, and delivery. With 15+ years in mixed-use residential and over 1,700 homes delivered at a combined build cost exceeding £555m, he keeps projects on programme, on budget, and on brief."
 
   - name: "Sam Roberts"
     role: "Design + Planning"
     email: "sam@metricandmaker.com"
-    bio: "Sam leads design strategy and planning. 15+ years in mixed-use residential, with 1,750+ homes delivered at a combined build cost of £650m+. He works across architecture, landscape, and planning from the earliest stages. Sam turns big, creative ideas into things that actually get built — driving exceptional outcomes while keeping a tight rein on budgets."
+    bio: "Sam leads design strategy and planning. He's worked for 15+ years in mixed-use residential, with 1,750+ homes delivered at £650m+ build cost. He works across architecture, landscape, and planning from the earliest stages, turning big creative ideas into things that actually get built."
 
 
 # -- NETWORK & PARTNERS ---------------------------------------------
@@ -199,8 +199,8 @@ contactCta:
   heading: "Interested in working with us? <em>Let's talk.</em>"
   body: "We welcome introductions from landowners, investors, and public sector partners at all stages — whether you have an initial idea worth exploring or a site ready to move on."
   contactLines:
-    - { label: "Partnerships & land",     email: "brad@metricandmaker.com" }
-    - { label: "Investments & finance",   email: "matt@metricandmaker.com" }
+    - { label: "Partnerships + land",     email: "brad@metricandmaker.com" }
+    - { label: "Investments + finance",   email: "matt@metricandmaker.com" }
     - { label: "General enquiries",       email: "hello@metricandmaker.com" }
   ctaLabel: "Get in touch"
   ctaHref: "mailto:hello@metricandmaker.com"

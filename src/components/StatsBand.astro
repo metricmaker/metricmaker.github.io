@@ -5,17 +5,17 @@ const { stats } = content;
 
 <section class="stats" id="track-record">
   <div class="wrap">
-    <div class="stats-head">
+    <div class="stats-head fade-up">
       <span class="eyebrow eyebrow-light">{stats.number}</span>
       <h2 style="margin-top:16px;">{stats.heading}</h2>
       <p>{stats.intro}</p>
     </div>
-    <div class="stats-grid">
+    <div class="stats-grid stagger">
       {
         stats.items.map((s) => (
           <div class="stat">
             <div class="num">
-              {s.number}
+              <span class="count" data-count-target={s.number}>{s.number}</span>
               {s.suffix && <span style="color:var(--gold-soft)">{s.suffix}</span>}
             </div>
             {s.label && <div class="num-label">{s.label}</div>}

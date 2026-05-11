@@ -60,11 +60,6 @@ stats:
       suffix: "+"
       label: "capital"
       sub: "Investment capital originated and managed"
-    # Build cost / GDV stat — placeholder figure; refine per Sam's email
-    - number: "£1bn"
-      suffix: "+"
-      label: "GDV"
-      sub: "Build cost / GDV delivered to date"
     - number: "60"
       suffix: "+"
       label: "yrs combined"
@@ -89,9 +84,9 @@ whatWeDo:
       idx: "03"
       title: "Land + Site Acquisition"
       body: "Targeting sites with planning potential, repositioning opportunities, or development upside — with a specialism in sensitive sites with complex planning histories."
-    - id: investment
+    - id: asset-management
       idx: "04"
-      title: "Investment + Asset Delivery"
+      title: "Asset Management + Optimisation"
       body: "Managing projects through acquisition, planning, construction, and exit or long-term hold — with deep experience originating and advising on institutional development capital."
 
 
@@ -149,7 +144,7 @@ directors:
   - name: "Matthew Tucker"
     role: "Investments + New Business"
     email: "matt@metricandmaker.com"
-    bio: "Matt leads investment strategy, development finance, and new business. With 15+ years with JLL and WSP, and £700m+ of investment experience across residential and mixed-use schemes, he models, stress-tests, and models again — de-risking every deal and making sure it stacks."
+    bio: "Matt leads investment strategy, development finance, and new business. With 18+ years with JLL and WSP, and £700m+ of investment experience across residential and mixed-use schemes, his focus is on maximizing opportunities and managing risk."
 
   - name: "James Hutchins"
     role: "Commercial Operations"
@@ -168,17 +163,17 @@ partners:
   heading: "Built on long-term partnerships."
   intro: "We work with a trusted network of architects, planners, designers, and contractors — people we've planned with, built with, and problem-solved with over the last two decades."
   items:
-    - img: "/assets/myco_logo.webp"
-      alt: "Myco"
-      name: "Myco"
-      role: "Contracting partner"
-      blurb: "Delivering innovative projects while championing safety, sustainability, and meaningful engagement with local communities."
-
-    - img: "/assets/HTA.webp"
+    - img: "/assets/hta.svg"
       alt: "HTA Design"
       name: "HTA Design"
-      role: "Landscape partners"
+      role: "Architecture + landscape"
       blurb: "One of the UK's leading design practices, the name behind 40,000+ homes and some of the country's best green spaces."
+
+    - img: "/assets/planit.png"
+      alt: "Planit"
+      name: "Planit"
+      role: "Planning + design"
+      blurb: "Multi-disciplinary planning and design practice."
 
     - img: "/assets/youth.webp"
       alt: "Youth"
@@ -187,10 +182,10 @@ partners:
       blurb: "Boutique practice known for its naturalistic and 'refined raw' aesthetic, and creating highly intentional residential spaces."
 
     - img: null
-      textLogo: "C O P P E R   C O A S T"
-      name: "Copper Coast"
-      role: "Creative partners"
-      blurb: "Design agency behind the visual identity and creative collateral for Metric + Maker and its developments."
+      textLogo: "O P S T E A D"
+      name: "Opstead"
+      role: "Development management"
+      blurb: "Urban development project management partner."
 
 
 # -- CONTACT / CTA ---------------------------------------------------

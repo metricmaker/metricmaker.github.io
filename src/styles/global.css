@@ -352,10 +352,15 @@ section.stats {
 .stats-head p { color: rgba(255,255,255,0.66); margin-top: 18px; max-width: 60ch; }
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
   border-top: 1px solid var(--line-navy);
   padding-top: 48px;
+}
+.stat .num .count {
+  /* Reserve horizontal space so the layout doesn't reflow while counting */
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
 }
 .stat .num {
   font-family: var(--serif);

@@ -55,7 +55,7 @@ const {
     </main>
     <Footer />
 
-    {/* Scroll-driven animations: IntersectionObserver + parallax loop */}
+    {/* Scroll-driven animations: IntersectionObserver + parallax loop + number counter */}
     <script>
       // Bail entirely if user prefers reduced motion
       const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -76,6 +76,72 @@ const {
           .querySelectorAll<HTMLElement>('.fade-up, .stagger')
           .forEach((el) => observer.observe(el));
 
+        // ---- Animated number counters (the "spin through" effect) ----
+        // Parses the displayed value (e.g. "5,000" or "£1bn" or "60"),
+        // resets to zero, then animates up to the target on enter view.
+        const counters = document.querySelectorAll<HTMLElement>('.count[data-count-target]');
+        counters.forEach((el) => {
+          const target = el.dataset.countTarget || '';
+          const match = target.match(/^([^\d.]*)([\d,.]+)(.*)$/);
+          if (!match) return;
+          const [, prefix, numText, suffix] = match;
+          const hasCommas = numText.includes(',');
+          const dotIndex = numText.indexOf('.');
+          const naturalDecimals = dotIndex >= 0 ? numText.length - dotIndex - 1 : 0;
+          const targetNum = parseFloat(numText.replace(/,/g, ''));
+          if (Number.isNaN(targetNum)) return;
+          // For tiny target values (e.g. "1" in "£1bn") force a decimal place
+          // so the count visibly animates rather than jumping 0 → 1.
+          const decimals = targetNum < 10 && naturalDecimals === 0 ? 1 : naturalDecimals;
+
+          const format = (n: number) => {
+            let s = n.toFixed(decimals);
+            if (hasCommas) {
+              const parts = s.split('.');
+              parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+              s = parts.join('.');
+            }
+            return prefix + s + suffix;
+          };
+
+          // Initialise displayed value at zero
+          el.textContent = format(0);
+
+          const duration = 1700;
+          let startTime = 0;
+          let rafId = 0;
+
+          const tick = (now: number) => {
+            if (!startTime) startTime = now;
+            const t = Math.min((now - startTime) / duration, 1);
+            // ease-out-cubic
+            const eased = 1 - Math.pow(1 - t, 3);
+            el.textContent = format(targetNum * eased);
+            if (t < 1) {
+              rafId = requestAnimationFrame(tick);
+            } else {
+              // Snap to the original display string at the end (preserves
+              // exact formatting like "£1bn" rather than "£1.0bn")
+              el.textContent = target;
+            }
+          };
+
+          const countObserver = new IntersectionObserver(
+            (entries) => {
+              for (const entry of entries) {
+                if (entry.isIntersecting) {
+                  cancelAnimationFrame(rafId);
+                  startTime = 0;
+                  rafId = requestAnimationFrame(tick);
+                  countObserver.unobserve(entry.target);
+                }
+              }
+            },
+            { threshold: 0.4 },
+          );
+          countObserver.observe(el);
+        });
+
         // ---- Parallax brand marks ----
         const marks = document.querySelectorAll<HTMLElement>('.parallax-mark');
         if (marks.length > 0) {
@@ -86,13 +152,10 @@ const {
               const section = mark.closest<HTMLElement>('.parallax-section');
               if (!section) continue;
               const rect = section.getBoundingClientRect();
-              // 0 when section's bottom is at top of viewport,
-              // 1 when section's top is at bottom of viewport.
               const progress = (vh - rect.top) / (vh + rect.height);
               const clamped = Math.max(0, Math.min(1, progress));
-              // Direction: 1 drifts down as you scroll, -1 drifts up.
               const direction = mark.dataset.parallaxDirection === 'down' ? 1 : -1;
-              const range = 220; // px of total movement
+              const range = 220;
               const offset = (clamped - 0.5) * range * direction;
               mark.style.transform = `translate3d(-50%, calc(-50% + ${offset.toFixed(1)}px), 0)`;
             }

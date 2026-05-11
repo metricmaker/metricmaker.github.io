@@ -50,7 +50,7 @@ hero:
 stats:
   number: "01 — Track record"
   heading: "The numbers behind the name."
-  intro: "Prior to founding Metric + Maker, our directors delivered thousands of homes, managed over a billion pounds of investment capital for leading residential investors and developers across London and the South East."
+  intro: "Prior to founding Metric + Maker, our Co-Founders delivered thousands of homes, managed over a billion pounds of investment capital for leading residential investors and developers across London and the South East."
   items:
     - number: "5,000"
       suffix: "+"
@@ -63,7 +63,7 @@ stats:
     - number: "60"
       suffix: "+"
       label: "yrs combined"
-      sub: "Director experience across the development lifecycle"
+      sub: "Co-Founder experience across the development lifecycle"
 
 
 # -- WHAT WE DO ------------------------------------------------------
@@ -135,24 +135,26 @@ people:
 
 # Each director's bio appears under their portrait.
 directors:
+  # `role` uses <br> so each Co-Founder's title wraps onto two lines for
+  # consistent alignment across the four cards.
   - name: "Bradley Goding"
-    role: "Partnerships + Land Acquisition"
-    email: "brad@metricandmaker.com"
+    role: "Partnerships +<br>Land Acquisition"
+    linkedin: "https://www.linkedin.com/in/bradley-goding-b989b4a1/"
     bio: "Brad leads site sourcing, landowner relationships, and partnership structuring — with 18+ years identifying and securing development opportunities across sites totalling over 1,700 homes and £1.1bn GDV. An entrepreneurial, people-first operator, he brings energy and big-picture thinking to every partnership."
 
   - name: "Matthew Tucker"
-    role: "Investments + Asset Management"
-    email: "matt@metricandmaker.com"
+    role: "Investments +<br>Asset Management"
+    linkedin: "https://www.linkedin.com/in/matt-tucker-09a44119/"
     bio: "Matt leads investment strategy, development finance, and new business. With 18+ years with JLL and WSP, and £700m+ of investment experience across residential and mixed-use schemes, his focus is on maximizing opportunities and managing risk."
 
   - name: "James Hutchins"
-    role: "Commercial Operations"
-    email: "james@metricandmaker.com"
+    role: "Commercial<br>Operations"
+    linkedin: "https://www.linkedin.com/in/james-hutchins-a74a0a1bb/"
     bio: "James leads commercial operations, cost management, and delivery. With 15+ years in mixed-use residential and over 1,700 homes delivered at a combined build cost exceeding £555m, he keeps projects on programme, on budget, and on brief."
 
   - name: "Sam Roberts"
-    role: "Design + Planning"
-    email: "sam@metricandmaker.com"
+    role: "Design +<br>Planning"
+    linkedin: "https://www.linkedin.com/in/sam-roberts-3a39a5206/"
     bio: "Sam leads design strategy and planning. He's worked for 15+ years in mixed-use residential, with 1,750+ homes delivered at £650m+ build cost. He works across architecture, landscape, and planning from the earliest stages, turning big creative ideas into things that actually get built."
 
 
@@ -193,8 +195,10 @@ contactCta:
   heading: "Interested in working with us? <em>Let's talk.</em>"
   body: "We welcome introductions from landowners, investors, and public sector partners at all stages — whether you have an initial idea worth exploring or a site ready to move on."
   contactLines:
-    - { label: "Partnerships + land",     email: "brad@metricandmaker.com" }
-    - { label: "Investments + finance",   email: "matt@metricandmaker.com" }
-    - { label: "General enquiries",       email: "hello@metricandmaker.com" }
+    - { label: "General enquiries", email: "hello@metricandmaker.com" }
+  address:
+    label: "Visit us"
+    value: "Pease House, Tilehouse St, Hitchin, SG5 2DX"
+    mapsHref: "https://www.google.com/maps/search/?api=1&query=Pease+House+Tilehouse+St+Hitchin+SG5+2DX"
   ctaLabel: "Get in touch"
   ctaHref: "mailto:hello@metricandmaker.com"

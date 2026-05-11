@@ -607,45 +607,51 @@ section.feature { background: var(--navy); color: var(--paper); padding: 0; over
 .case-study-facts .v { color: var(--navy); }
 .case-study-copy .cta-row { margin-top: 28px; }
 
-/* --- People (single-page, 4-up with full bios) --- */
+/* --- People (single-page, 4-up, no portraits) --- */
 .people-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: clamp(20px, 2.5vw, 36px);
 }
-.people-grid .person { display: flex; flex-direction: column; gap: 16px; }
-.people-grid .person .portrait {
-  aspect-ratio: 4/5;
-  background: linear-gradient(160deg, #2A3B52 0%, var(--navy) 100%);
-  position: relative;
-  overflow: hidden;
+.people-grid .person {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line-cream);
 }
-.people-grid .person .portrait::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url('/assets/mark-gold.svg');
-  background-size: 40%;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.18;
-}
-.people-grid .person .portrait .tag {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
-  font-size: 10px;
-  letter-spacing: 0.16em;
+.people-grid .person .role {
+  font-size: 12px;
+  color: var(--gold);
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.6);
-  border: 1px solid rgba(255,255,255,0.2);
-  padding: 4px 8px;
+  font-weight: 500;
+  /* Two-line height locked so all four cards align even when one role
+     would naturally wrap shorter than the others. */
+  min-height: calc(2 * 1.4em);
+  line-height: 1.4;
 }
-.people-grid .person h3 { font-size: clamp(20px, 1.8vw, 24px); }
-.people-grid .person .role { font-size: 12px; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; }
+.people-grid .person h3 { font-size: clamp(20px, 1.8vw, 24px); margin-top: 2px; }
 .people-grid .person .bio { font-size: 14.5px; color: var(--ink-mute); line-height: 1.55; }
-.people-grid .person a.email { font-size: 13px; color: var(--navy); border-bottom: 1px solid var(--ink-faint); padding-bottom: 2px; align-self: flex-start; }
-.people-grid .person a.email:hover { border-bottom-color: var(--gold); }
+.people-grid .person a.linkedin {
+  margin-top: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(0, 31, 54, 0.06);
+  color: var(--navy);
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+  align-self: flex-start;
+}
+.people-grid .person a.linkedin svg { width: 16px; height: 16px; display: block; }
+.people-grid .person a.linkedin:hover {
+  background: var(--navy);
+  color: var(--paper);
+  transform: translateY(-1px);
+}
 
 /* People detail grid (2-column detailed bios on /people) */
 .people-detail {
@@ -802,6 +808,37 @@ section.cta {
 }
 .cta .emails a { color: var(--gold-soft); border-bottom: 1px solid transparent; padding-bottom: 2px; }
 .cta .emails a:hover { border-bottom-color: var(--gold); color: var(--gold); }
+
+/* Contact block: stacked label + value pairs, each line clickable */
+.cta .contact-block {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.cta .contact-line {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--paper);
+  text-decoration: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  padding-left: 16px;
+  transition: border-color .2s ease;
+}
+.cta a.contact-line:hover { border-left-color: var(--gold); }
+.cta .contact-label {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+  font-weight: 500;
+}
+.cta .contact-value {
+  font-size: 15.5px;
+  color: var(--paper);
+}
+.cta a.contact-line:hover .contact-value { color: var(--gold); }
 .cta .actions { margin-top: 40px; display: flex; gap: 12px; flex-wrap: wrap; }
 
 /* --- Contact page specific --- */

@@ -93,8 +93,9 @@ export interface PeopleSection {
 
 export interface Director {
   name: string;
+  /** Role may contain <br> for forced line break; rendered with set:html */
   role: string;
-  email: string;
+  linkedin: string;
   bio: string;
 }
 
@@ -119,11 +120,18 @@ export interface ContactLine {
   email: string;
 }
 
+export interface AddressBlock {
+  label: string;
+  value: string;
+  mapsHref?: string;
+}
+
 export interface ContactCta {
   number: string;
   heading: string;
   body: string;
   contactLines: ContactLine[];
+  address?: AddressBlock;
   ctaLabel: string;
   ctaHref: string;
 }

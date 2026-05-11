@@ -11,13 +11,29 @@ const cta = content.contactCta;
     </div>
     <div class="right">
       <p>{cta.body}</p>
-      <div class="emails">
+      <div class="contact-block">
         {
           cta.contactLines.map((c) => (
-            <a href={`mailto:${c.email}`}>
-              {c.label}: {c.email}
+            <a class="contact-line" href={`mailto:${c.email}`}>
+              <span class="contact-label">{c.label}</span>
+              <span class="contact-value">{c.email}</span>
             </a>
           ))
+        }
+        {
+          cta.address && (
+            cta.address.mapsHref ? (
+              <a class="contact-line" href={cta.address.mapsHref} target="_blank" rel="noopener">
+                <span class="contact-label">{cta.address.label}</span>
+                <span class="contact-value">{cta.address.value}</span>
+              </a>
+            ) : (
+              <div class="contact-line">
+                <span class="contact-label">{cta.address.label}</span>
+                <span class="contact-value">{cta.address.value}</span>
+              </div>
+            )
+          )
         }
       </div>
       <div class="actions">

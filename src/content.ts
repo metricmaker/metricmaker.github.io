@@ -106,6 +106,8 @@ export interface PartnerItem {
   name: string;
   role: string;
   blurb: string;
+  /** Optional CSS modifier, e.g. "mark-only" to crop a wide source */
+  modifier?: string;
 }
 
 export interface PartnersSection {

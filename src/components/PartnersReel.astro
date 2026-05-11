@@ -6,7 +6,6 @@
  */
 import { content } from '../content';
 
-// Build a single pass from the YAML, then double it for seamless looping.
 const pass = content.partners.items;
 const doubled = [...pass, ...pass];
 ---
@@ -14,17 +13,22 @@ const doubled = [...pass, ...pass];
 <div class="reel" aria-label="Partner organisations">
   <div class="reel-track">
     {
-      doubled.map((p, i) =>
-        p.img ? (
-          <div class="reel-item" aria-hidden={i >= pass.length ? 'true' : undefined}>
-            <img src={p.img} alt={i >= pass.length ? '' : (p.alt ?? p.name)} />
-          </div>
-        ) : (
-          <div class="reel-item text" aria-hidden={i >= pass.length ? 'true' : undefined}>
+      doubled.map((p, i) => {
+        const aria = i >= pass.length ? 'true' : undefined;
+        const modClass = p.modifier ? `is-${p.modifier}` : '';
+        if (p.img) {
+          return (
+            <div class:list={['reel-item', modClass]} aria-hidden={aria}>
+              <img src={p.img} alt={i >= pass.length ? '' : (p.alt ?? p.name)} />
+            </div>
+          );
+        }
+        return (
+          <div class:list={['reel-item', 'text', modClass]} aria-hidden={aria}>
             {p.textLogo}
           </div>
-        ),
-      )
+        );
+      })
     }
   </div>
 </div>

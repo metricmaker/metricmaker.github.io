@@ -745,6 +745,20 @@ section.feature { background: var(--navy); color: var(--paper); padding: 0; over
   transition: opacity .3s ease;
 }
 .reel-item:hover img { opacity: 1; }
+
+/* Modifier: source image has the mark on the left + a lot of empty
+   transparent space to the right. Crop the visible area to a square
+   showing just the mark. */
+.reel-item.is-mark-only {
+  width: 64px;
+  overflow: hidden;
+}
+.reel-item.is-mark-only img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+}
 .reel-item.text {
   font-family: var(--serif);
   font-size: 22px;

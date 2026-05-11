@@ -77,10 +77,7 @@ const {
           whatWeDo.services.map((s) => (
             <article class="service">
               <span class="idx">— {s.idx}</span>
-              <h3 set:html={s.title.replace(
-                '+',
-                '<em style="color:var(--gold);font-style:normal;">+</em>',
-              )} />
+              <h3>{s.title}</h3>
               <p>{s.body}</p>
             </article>
           ))

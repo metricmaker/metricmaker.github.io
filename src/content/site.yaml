@@ -50,7 +50,7 @@ hero:
 stats:
   number: "01 — Track record"
   heading: "The numbers behind the name."
-  intro: "Prior to founding Metric + Maker, our directors delivered thousands of homes, managed over a billion pounds of senior debt, and raised nine-figure equity for leading residential developers across London and the South East."
+  intro: "Prior to founding Metric + Maker, our directors delivered thousands of homes, managed over a billion pounds of investment capital for leading residential investors and developers across London and the South East."
   items:
     - number: "5,000"
       suffix: "+"
@@ -59,7 +59,7 @@ stats:
     - number: "£1bn"
       suffix: "+"
       label: "capital"
-      sub: "Investment capital originated and managed"
+      sub: "Investment capital managed"
     - number: "60"
       suffix: "+"
       label: "yrs combined"
@@ -74,7 +74,7 @@ whatWeDo:
   services:
     - id: development
       idx: "01"
-      title: "Development + Contracting"
+      title: "Development + Construction"
       body: "Design, planning, and delivery of residential and mixed-use schemes — with a focus on well-located sites where active management creates lasting value."
     - id: joint-ventures
       idx: "02"
@@ -87,7 +87,7 @@ whatWeDo:
     - id: asset-management
       idx: "04"
       title: "Asset Management + Optimisation"
-      body: "Managing projects through acquisition, planning, construction, and exit or long-term hold — with deep experience originating and advising on institutional development capital."
+      body: "Maximising opportunities to create commercially robust and carefully made schemes that stand the test of time for owners."
 
 
 # -- OUR APPROACH (case study) ---------------------------------------
@@ -108,7 +108,6 @@ approach:
       - { key: "Location", value: "Hitchin, Hertfordshire" }
       - { key: "Setting",  value: "30 acres of mature parkland" }
       - { key: "Tenure",   value: "1–4 bedroom apartments and houses" }
-      - { key: "Partner",  value: "JV with Myco" }
       - { key: "Status",   value: "Pre-launch" }
     ctaLabel: "Visit prioryparkgardens.com"
     ctaHref: "https://prioryparkgardens.com"
@@ -118,7 +117,7 @@ approach:
 opportunities:
   number: "04 — Opportunities"
   heading: "What we're looking for."
-  intro: "We're active buyers and partners. If you have a site, a scheme, or a conversation worth having, we want to hear from you."
+  intro: "We're active partners. If you have a site, a scheme, or a conversation worth having, we want to hear from you."
   criteria:
     - "Residential and mixed-use development sites"
     - "Land with planning potential — allocated, unallocated, or with a complex planning history"
@@ -142,7 +141,7 @@ directors:
     bio: "Brad leads site sourcing, landowner relationships, and partnership structuring — with 18+ years identifying and securing development opportunities across sites totalling over 1,700 homes and £1.1bn GDV. An entrepreneurial, people-first operator, he brings energy and big-picture thinking to every partnership."
 
   - name: "Matthew Tucker"
-    role: "Investments + New Business"
+    role: "Investments + Asset Management"
     email: "matt@metricandmaker.com"
     bio: "Matt leads investment strategy, development finance, and new business. With 18+ years with JLL and WSP, and £700m+ of investment experience across residential and mixed-use schemes, his focus is on maximizing opportunities and managing risk."
 

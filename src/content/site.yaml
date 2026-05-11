@@ -206,15 +206,11 @@ partners:
       role: "Acoustic consultancy"
       blurb: "Acoustic engineering and consultancy."
 
-    - img: "/assets/cooper-homewood.png"
+    - img: "/assets/cooper-homewood.jpg"
       alt: "Cooper Homewood"
       name: "Cooper Homewood"
       role: "Building services"
       blurb: "Building services and MEP consultancy."
-      # The source file is just the circular mark with empty transparent
-      # space to the right. `mark-only` crops the visible area down to
-      # the mark itself so it doesn't open up a gap in the carousel.
-      modifier: "mark-only"
 
 
 # -- CONTACT / CTA ---------------------------------------------------

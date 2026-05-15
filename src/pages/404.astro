@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Page not found — Metric + Maker"
+  description="The page you're looking for doesn't exist. Head back to the homepage."
+>
+  <section
+    style="min-height:80vh;display:flex;align-items:center;background:var(--paper);padding:clamp(120px,14vw,180px) 0;"
+  >
+    <div class="wrap" style="text-align:left;max-width:780px;">
+      <span class="eyebrow">404</span>
+      <h1
+        style="margin-top:18px;font-size:clamp(40px,5.5vw,80px);max-width:18ch;"
+      >
+        That page isn't <em style="font-style:italic;color:var(--gold);">here.</em>
+      </h1>
+      <p class="lead" style="margin-top:28px;max-width:54ch;">
+        The page you're looking for either doesn't exist, has moved, or was part of an
+        earlier version of this site. Head back to the homepage and you'll find your bearings.
+      </p>
+      <div style="margin-top:40px;display:flex;flex-wrap:wrap;gap:14px;">
+        <a href="/" class="btn btn-primary">Back to homepage <span class="btn-arrow">→</span></a>
+        <a href="/#contact" class="btn btn-ghost-navy">Get in touch</a>
+      </div>
+    </div>
+  </section>
+</Base>

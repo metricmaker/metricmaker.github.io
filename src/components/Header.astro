@@ -14,6 +14,24 @@ const { nav } = content;
         {nav.cta.label} <span class="arr">→</span>
       </a>
     </nav>
-    <button class="menu-toggle" aria-label="Open menu">☰</button>
+    <button
+      class="menu-toggle"
+      id="menu-open-btn"
+      aria-label="Open menu"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+    >☰</button>
   </div>
 </header>
+
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <button
+    class="menu-close"
+    id="menu-close-btn"
+    aria-label="Close menu"
+  >✕</button>
+  <nav class="mobile-nav" aria-label="Mobile">
+    {nav.links.map((l) => <a href={l.href}>{l.label}</a>)}
+    <a href={nav.cta.href} class="mobile-cta">{nav.cta.label}</a>
+  </nav>
+</div>

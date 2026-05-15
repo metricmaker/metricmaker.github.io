@@ -222,6 +222,77 @@ nav.primary a.active { opacity: 1; border-bottom-color: var(--gold); }
 .nav-cta:hover .arr { transform: translateX(4px); }
 .menu-toggle { display: none; }
 
+/* --- Mobile menu drawer --- */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: var(--navy);
+  color: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  /* Delay visibility change so opacity can fade in/out smoothly */
+  transition: opacity .35s ease, visibility 0s linear .35s;
+}
+html.menu-open .mobile-menu {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .35s ease, visibility 0s linear 0s;
+}
+html.menu-open { overflow: hidden; }
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  text-align: center;
+  padding: 0 clamp(20px, 5vw, 40px);
+}
+.mobile-nav a {
+  font-family: var(--serif);
+  font-size: clamp(30px, 8vw, 52px);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--paper);
+  line-height: 1.1;
+  transition: color .2s ease;
+}
+.mobile-nav a:hover,
+.mobile-nav a:focus { color: var(--gold-soft); }
+.mobile-nav a.mobile-cta {
+  margin-top: 18px;
+  font-size: clamp(14px, 3vw, 16px);
+  font-family: var(--sans);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  padding-top: 24px;
+}
+
+.menu-close {
+  position: absolute;
+  top: 28px;
+  right: clamp(20px, 5vw, 40px);
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  line-height: 1;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: var(--paper);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color .2s ease, color .2s ease;
+}
+.menu-close:hover { border-color: var(--gold); color: var(--gold); }
+
 /* --- Hero (full-screen drone footage — homepage only) --- */
 section.hero {
   background: var(--navy);

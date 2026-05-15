@@ -718,7 +718,7 @@ section.feature { background: var(--navy); color: var(--paper); padding: 0; over
   align-items: center;
   gap: clamp(48px, 7vw, 96px);
   width: max-content;
-  animation: reel-scroll 42s linear infinite;
+  animation: reel-scroll 28s linear infinite;
 }
 .reel:hover .reel-track { animation-play-state: paused; }
 @media (prefers-reduced-motion: reduce) {

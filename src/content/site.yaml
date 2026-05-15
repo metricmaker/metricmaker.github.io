@@ -50,7 +50,7 @@ hero:
 stats:
   number: "01 — Track record"
   heading: "The numbers behind the name."
-  intro: "Prior to founding Metric + Maker, our Co-founders delivered thousands of homes, managed over a billion pounds of investment capital for leading residential investors and developers across London and the South East."
+  intro: "Prior to founding Metric + Maker, our co-founders delivered thousands of homes, managed over a billion pounds of investment capital for leading residential investors and developers across London and the South East."
   items:
     - number: "5,000"
       suffix: "+"

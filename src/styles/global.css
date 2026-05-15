@@ -583,10 +583,10 @@ section.feature { background: var(--navy); color: var(--paper); padding: 0; over
 }
 .case-study-image {
   aspect-ratio: 4/3;
-  /* Slightly oversize and anchor near the top so the watercolour's
+  /* Slightly oversize and anchor to the very top so the watercolour's
      white edges are cropped AND the turret stays fully visible. */
   background-size: 122%;
-  background-position: center 12%;
+  background-position: center top;
   background-repeat: no-repeat;
   background-color: #EBE5D6;
 }

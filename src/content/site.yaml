@@ -50,7 +50,7 @@ hero:
 stats:
   number: "01 — Track record"
   heading: "The numbers behind the name."
-  intro: "Prior to founding Metric + Maker, our Co-Founders delivered thousands of homes, managed over a billion pounds of investment capital for leading residential investors and developers across London and the South East."
+  intro: "Prior to founding Metric + Maker, our Co-founders delivered thousands of homes, managed over a billion pounds of investment capital for leading residential investors and developers across London and the South East."
   items:
     - number: "5,000"
       suffix: "+"
@@ -63,7 +63,7 @@ stats:
     - number: "60"
       suffix: "+"
       label: "yrs combined"
-      sub: "Co-Founder experience across the development lifecycle"
+      sub: "Co-founder experience across the development lifecycle"
 
 
 # -- WHAT WE DO ------------------------------------------------------
@@ -135,7 +135,7 @@ people:
 
 # Each director's bio appears under their portrait.
 directors:
-  # `role` uses <br> so each Co-Founder's title wraps onto two lines for
+  # `role` uses <br> so each Co-founder's title wraps onto two lines for
   # consistent alignment across the four cards.
   - name: "Bradley Goding"
     role: "Partnerships +<br>Land Acquisition"
@@ -150,12 +150,12 @@ directors:
   - name: "James Hutchins"
     role: "Commercial<br>Operations"
     linkedin: "https://www.linkedin.com/in/james-hutchins-a74a0a1bb/"
-    bio: "James leads commercial operations, cost management, and delivery. With 15+ years in mixed-use residential and over 1,700 homes delivered at a combined build cost exceeding £555m, he keeps projects on programme, on budget, and on brief."
+    bio: "James leads commercial operations, cost management, and delivery. Across 15+ years in mixed-use residential he has overseen more than £650m worth of construction value — bringing the rigour that keeps complex projects on programme, on budget, and on brief."
 
   - name: "Sam Roberts"
     role: "Design +<br>Planning"
     linkedin: "https://www.linkedin.com/in/sam-roberts-3a39a5206/"
-    bio: "Sam leads design strategy and planning. He's worked for 15+ years in mixed-use residential, with 1,750+ homes delivered at £650m+ build cost. He works across architecture, landscape, and planning from the earliest stages, turning big creative ideas into things that actually get built."
+    bio: "Sam leads design strategy and planning. He has spent 15+ years shaping mixed-use residential schemes from the ground up — successfully delivering over 1,750 homes — working across architecture, landscape, and planning to turn ambitious creative ideas into built reality."
 
 
 # -- NETWORK & PARTNERS ---------------------------------------------
@@ -182,8 +182,8 @@ partners:
       role: "Interior designers"
       blurb: "Boutique practice known for its naturalistic and 'refined raw' aesthetic, and creating highly intentional residential spaces."
 
-    - img: null
-      textLogo: "O P S T E A D"
+    - img: "/assets/opstead-logo-black.png"
+      alt: "Opstead"
       name: "Opstead"
       role: "Development management"
       blurb: "Urban development project management partner."

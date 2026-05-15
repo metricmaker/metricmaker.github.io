@@ -109,6 +109,9 @@ approach:
       - { key: "Setting",  value: "30 acres of mature parkland" }
       - { key: "Tenure",   value: "1–4 bedroom apartments and houses" }
       - { key: "Status",   value: "Pre-launch" }
+    # Set ctaEnabled to true to show the "Visit prioryparkgardens.com"
+    # button under the case study; false hides it.
+    ctaEnabled: false
     ctaLabel: "Visit prioryparkgardens.com"
     ctaHref: "https://prioryparkgardens.com"
 

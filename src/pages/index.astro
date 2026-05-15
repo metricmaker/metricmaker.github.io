@@ -118,16 +118,18 @@ const {
                   ))
                 }
               </div>
-              <div class="cta-row">
-                <a
-                  href={approach.caseStudy.ctaHref}
-                  target="_blank"
-                  rel="noopener"
-                  class="btn btn-ghost-navy"
-                >
-                  {approach.caseStudy.ctaLabel} <span class="btn-arrow">→</span>
-                </a>
-              </div>
+              {approach.caseStudy.ctaEnabled && (
+                <div class="cta-row">
+                  <a
+                    href={approach.caseStudy.ctaHref}
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-ghost-navy"
+                  >
+                    {approach.caseStudy.ctaLabel} <span class="btn-arrow">→</span>
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         </div>

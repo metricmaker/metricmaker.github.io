@@ -67,6 +67,8 @@ export interface CaseStudy {
   title: string;
   paragraphs: string[];
   facts: FactItem[];
+  /** When false, the case-study CTA button is hidden. */
+  ctaEnabled?: boolean;
   ctaLabel: string;
   ctaHref: string;
 }

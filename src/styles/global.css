@@ -586,7 +586,7 @@ section.feature { background: var(--navy); color: var(--paper); padding: 0; over
   /* Slightly oversize and anchor to the very top so the watercolour's
      white edges are cropped AND the turret stays fully visible. */
   background-size: 122%;
-  background-position: center top;
+  background-position: center 8%;
   background-repeat: no-repeat;
   background-color: #EBE5D6;
 }

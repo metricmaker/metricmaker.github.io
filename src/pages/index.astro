@@ -18,6 +18,9 @@ const {
 ---
 
 <Base title={site.title} description={site.description}>
+  {/* Schema.org Organization markup for Google understanding */}
+  <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+
   <span id="top"></span>
 
   <!-- ========== HERO (full-screen drone footage) ========== -->

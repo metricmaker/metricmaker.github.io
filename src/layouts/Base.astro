@@ -24,6 +24,7 @@ const {
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="google-site-verification" content="birNxedPbpq6HlPICrqq297rMO0nKwt97ooBBw0GvJ0" />
     <link rel="icon" type="image/svg+xml" href="/assets/mark-gold.svg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -54,6 +55,14 @@ const {
       <slot />
     </main>
     <Footer />
+
+    {/* Cloudflare Web Analytics — privacy-friendly, no cookies, no personal data */}
+    <script
+      is:inline
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "c2423493bcac44ce947aa9ad526d5295"}'
+    ></script>
 
     {/* Mobile menu toggle — runs regardless of reduced-motion preference */}
     <script>

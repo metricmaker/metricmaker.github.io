@@ -15,6 +15,40 @@ const {
   directors,
   partners,
 } = content;
+
+// Strip <br> tags from role strings so they're clean plain text in schema
+const cleanRole = (r: string) =>
+  r.replace(/<br\s*\/?>/g, ' ').replace(/\s+/g, ' ').trim();
+
+// JSON-LD structured data — helps Google's automated systems understand
+// the business (name, address, founders, social links). Renders as an
+// invisible script in the page source; machine-readable only.
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Metric + Maker',
+  alternateName: 'Metric and Maker',
+  url: 'https://www.metricandmaker.com',
+  logo: 'https://www.metricandmaker.com/assets/logo-navy.svg',
+  description: site.description,
+  email: 'hello@metricandmaker.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Pease House, Tilehouse St',
+    addressLocality: 'Hitchin',
+    addressRegion: 'Hertfordshire',
+    postalCode: 'SG5 2DX',
+    addressCountry: 'GB',
+  },
+  founder: directors.map((d) => ({
+    '@type': 'Person',
+    name: d.name,
+    jobTitle: `Co-founder, ${cleanRole(d.role)}`,
+    sameAs: d.linkedin,
+    worksFor: { '@type': 'Organization', name: 'Metric + Maker' },
+  })),
+  sameAs: directors.map((d) => d.linkedin),
+};
 ---
 
 <Base title={site.title} description={site.description}>
